@@ -1,0 +1,50 @@
+@use "_base" as *
+
+#menu
+  a
+    text-decoration: none
+
+  #menu-title
+    color: $foreground-color
+    font-weight: bolder
+    font-size: 1.1em
+
+  #menu-toggle-button, #menu-toggle-label
+    display: none
+
+  #menu-items
+    float: right
+    display: inline
+    margin: 0
+
+    li
+      display: inline
+
+    a
+      margin-left: 1.5em
+
+      &:hover
+        text-decoration: underline
+
+@media (max-width: $break-point)
+  #menu
+    #menu-toggle-label
+      display: inline
+      cursor: pointer
+      float: right
+
+    #menu-items
+      display: none
+
+  input#menu-toggle-button:checked ~ #menu-items
+    display: block
+    float: none
+    margin: 1em 0 0 0
+    padding: 0
+
+    li
+      display: block
+      margin: 1em 0 0 0
+
+      a
+        margin: 0

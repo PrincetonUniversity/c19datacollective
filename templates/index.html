@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div id="hero">
+    <img src="/cover.jpg" alt="Cover image" />
+    <section>
+      <h1>{{ config.extra.title }}</h1>
+      <p>
+        {{ config.extra.description }}
+      </p>
+      <a href="/submit">Submit</a>
+    </section>
+  </div>
+
+  <main>
+    {{ section.content | safe }}
+  </main>
+{% endblock content %}

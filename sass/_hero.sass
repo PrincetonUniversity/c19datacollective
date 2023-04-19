@@ -1,0 +1,46 @@
+@use "_base" as *
+
+#hero
+  height: 70vh
+  position: relative
+  overflow: hidden
+  display: flex
+  align-items: center
+  justify-content: center
+
+  img
+    position: absolute
+    width: 100%
+    height: 70vh
+    object-fit: cover
+    object-position: center
+    z-index: -1
+    opacity: 0.3
+
+  section
+    text-align: center
+    max-width: $max-text-width
+    width: 90%
+    margin: auto
+
+    h1
+      font-size: 4em
+      line-height: 1
+      text-shadow: 0 0 25px white
+      margin: 0
+
+    p
+      font-size: 1.2em
+      text-shadow: 0 0 25px white
+      margin: 2em auto 0 auto
+
+    a
+      display: block
+      background-color: $heading-color
+      margin: 2em auto 0 auto
+      width: 5em
+      padding: 5px
+      border-radius: 5px
+      color: white
+      font-size: 1.2em
+      text-decoration: none

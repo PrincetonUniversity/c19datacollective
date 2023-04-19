@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main {% if page.toc and not page.extra.disable_toc %}class="two-col"{% endif %}>
+    {% include "_toc.html" %}
+    <article>
+      <h1>{{ page.title }}</h1>
+      {{ page.content | safe }}
+    </article>
+  </main>
+{% endblock content %}
