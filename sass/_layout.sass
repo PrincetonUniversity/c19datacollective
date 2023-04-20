@@ -12,7 +12,7 @@ body
 
 header
   z-index: 50
-  padding: 1.5em 2em
+  padding: 1em 1em
   position: sticky
   top: 0
 
@@ -21,13 +21,16 @@ header
 
 main
   max-width: $max-text-width
-  width: 95%
+  width: 90%
   margin: auto
 
 main.two-col
   max-width: 900px
 
 @media (min-width: $break-point)
+  header
+    padding: 1.5em 2em
+
   main.two-col
     display: grid
     grid-template-columns: 1fr 250px
