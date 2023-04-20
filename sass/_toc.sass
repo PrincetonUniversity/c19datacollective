@@ -20,20 +20,26 @@ main.has-toc
   ul
     list-style: none
 
-    li:before
-      content: "\2022"
-      color: $secondary-color
-      display: inline-block
-      width: 1em
-      margin-left: -1.2em
+    li
+      margin: 0.2em 0
+
+      &:before
+        content: "\2022"
+        color: $secondary-color
+        display: inline-block
+        width: 1em
+        margin-left: -1.2em
 
   a
     text-decoration: none
 
-  a.back-to-top:before
-    content: "↑"
-    display: inline-block
-    width: 1em
+  a.back-to-top
+    display: none
+
+    &:before
+      content: "↑"
+      display: inline-block
+      width: 1em
 
 @media (min-width: $breakpoint)
   main.has-toc
@@ -55,3 +61,6 @@ main.has-toc
 
       &:hover, &.active
         color: $highlight-color
+
+    a.back-to-top
+      display: block
