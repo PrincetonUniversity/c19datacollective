@@ -20,13 +20,6 @@ criteria for more information about how we are expanding what data can and
 should mean for our field. Please [contact us][contact] if you are interested in serving
 as a reviewer or have any questions.
 
----
-
-To propose a dataset for inclusion in the collective, please submit a 1000-1500-word curatorial statement—a data essay—organized according to the criteria linked below and addressing these questions as relevant. This statement should make visible the choices and the labor that have gone into the creation of the data set and demonstrate the scholarly value of this data in its field.
-
-[See the full criteria for the data essay][data-essay].
-
 [caucus]: https://data-caucus.vercel.app
 [post45]: https://data.post45.org
 [contact]: mailto:19thCDataCollective@gmail.com
-[data-essay]: @/data-essay.md

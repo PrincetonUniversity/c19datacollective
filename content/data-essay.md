@@ -2,9 +2,9 @@
 title = "Data Essay Criteria"
 +++
 
-The data essay should be around 1500 words not counting bibliography, and include the following:
+To propose a dataset for inclusion in the collective, please submit a curatorial statement—a data essay—organized according to the criteria below and addressing these questions as relevant. The data essay should be around 1500 words, not including bibliography. It should make visible the choices and the labor that have gone into the creation of the data set and demonstrate the scholarly value of this data in its field.
 
-## Metadata
+## Basic Information
 
 Include the following information about your dataset:
 
