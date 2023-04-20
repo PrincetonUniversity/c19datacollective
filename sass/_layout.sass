@@ -22,20 +22,6 @@ main
   width: 90%
   margin: auto
 
-main.has-toc
-  max-width: $max-two-col-width
-  display: grid
-  grid-template-areas: "title" "toc" "article"
-
-  h1
-    grid-area: title
-
-  article
-    grid-area: article
-
-  nav.toc
-    grid-area: toc
-
 footer
   margin-top: 2em
   padding: 1.5em 2em
@@ -59,13 +45,3 @@ hr
 @media (min-width: $breakpoint)
   header
     padding: 1.5em 2em
-
-  main.has-toc
-    grid-template-columns: 1fr 250px
-    grid-template-areas: "title ." "article toc"
-    column-gap: 2em
-
-    nav.toc
-      position: sticky
-      top: calc(1.5em * 2 + 1.1em + 1em)
-      align-self: start

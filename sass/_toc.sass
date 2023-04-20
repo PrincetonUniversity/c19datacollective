@@ -1,0 +1,57 @@
+@use "_base" as *
+
+main.has-toc
+  max-width: $max-two-col-width
+  display: grid
+  grid-template-areas: "title" "toc" "article"
+
+  h1
+    grid-area: title
+
+  article
+    grid-area: article
+
+  nav.toc
+    grid-area: toc
+
+.toc
+  font-size: 11pt
+
+  ul
+    list-style: none
+
+    li:before
+      content: "\2022"
+      color: $secondary-color
+      display: inline-block
+      width: 1em
+      margin-left: -1.2em
+
+  a
+    text-decoration: none
+
+  a.back-to-top:before
+    content: "↑"
+    display: inline-block
+    width: 1em
+
+@media (min-width: $breakpoint)
+  main.has-toc
+    grid-template-columns: 1fr 250px
+    grid-template-areas: "title ." "article toc"
+    column-gap: 2em
+
+    nav.toc
+      position: sticky
+      top: calc(1.5em * 2 + 1.1em + 1em)
+      align-self: start
+
+  .toc
+    h2
+      opacity: 0.8
+
+    a
+      color: $secondary-color
+
+      &:hover, &.active
+        color: $highlight-color

@@ -24,35 +24,3 @@ h1
   line-height: 1
 a
   color: $highlight-color
-
-.toc
-  font-size: 11pt
-
-  ul
-    list-style: none
-
-    li:before
-      content: "\2022"
-      color: $secondary-color
-      display: inline-block
-      width: 1em
-      margin-left: -1.2em
-
-  a
-    text-decoration: none
-
-  a.back-to-top:before
-    content: "↑"
-    display: inline-block
-    width: 1em
-
-@media (min-width: $breakpoint)
-  .toc
-    h2
-      opacity: 0.8
-
-    a
-      color: $secondary-color
-
-      &:hover, &.active
-        color: $highlight-color
