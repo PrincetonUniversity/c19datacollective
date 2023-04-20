@@ -2,6 +2,8 @@
 
 #hero
   height: 70vh
+  padding: 1em 0
+  margin-bottom: 2em
   position: relative
   overflow: hidden
   display: flex
@@ -11,11 +13,11 @@
   img
     position: absolute
     width: 100%
-    height: 70vh
+    height: 100%
     object-fit: cover
     object-position: center
     z-index: -1
-    opacity: 0.3
+    opacity: 0.4
 
   section
     text-align: center
@@ -44,3 +46,11 @@
       color: white
       font-size: 1.2em
       text-decoration: none
+
+@media (max-width: $break-point)
+  #hero section
+    h1
+      font-size: 3em
+
+    p, a
+      margin-top: 1em
