@@ -2,17 +2,15 @@
 
 html
   scroll-behavior: smooth
-  height: 100%
 
 body
   margin: 0
   display: flex
   flex-direction: column
-  height: 100%
 
 header
+  padding: 1.5em 1em
   z-index: 50
-  padding: 1em 1em
   position: sticky
   top: 0
 
@@ -26,25 +24,17 @@ main
 
 main.has-toc
   max-width: $max-two-col-width
+  display: grid
+  grid-template-areas: "title" "toc" "article"
 
-@media (min-width: $breakpoint)
-  header
-    padding: 1.5em 2em
+  h1
+    grid-area: title
 
-  main.has-toc
-    display: grid
-    grid-template-columns: 1fr 250px
-    grid-template-areas: "article toc"
-    gap: 2em
+  article
+    grid-area: article
 
-    article
-      grid-area: article
-
-    nav.toc
-      grid-area: toc
-      position: sticky
-      top: 150px
-      align-self: start
+  nav.toc
+    grid-area: toc
 
 footer
   margin-top: 2em
@@ -55,8 +45,8 @@ footer
 :target:before
   content: ""
   display: block
-  height: 100px
-  margin: -100px 0 0
+  height: calc(1.5em * 2 + 1.1em)
+  margin: calc(-1.5em * 2 - 1.1em) 0 0 0
 
 img
   max-width: 100%
@@ -65,3 +55,17 @@ hr
   border: none
   border-top: 2px solid $heading-color
   margin: 3em 6em
+
+@media (min-width: $breakpoint)
+  header
+    padding: 1.5em 2em
+
+  main.has-toc
+    grid-template-columns: 1fr 250px
+    grid-template-areas: "title ." "article toc"
+    column-gap: 2em
+
+    nav.toc
+      position: sticky
+      top: calc(1.5em * 2 + 1.1em + 1em)
+      align-self: start
