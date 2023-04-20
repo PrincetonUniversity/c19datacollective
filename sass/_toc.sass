@@ -13,9 +13,25 @@ main.has-toc
 
   nav.toc
     grid-area: toc
+    position: sticky
+    top: calc(1.5em * 2 + 1.1em + 1em)
+    align-self: start
 
 .toc
   font-size: 11pt
+  background-color: white
+
+  h2
+    font-size: 1.2em
+    cursor: pointer
+    vertical-align: middle
+
+    &:before
+      content: "▲"
+      font-size: 10pt
+      display: inline-block
+      vertical-align: middle
+      width: 2em
 
   ul
     list-style: none
@@ -34,23 +50,30 @@ main.has-toc
     text-decoration: none
 
   a.back-to-top
-    display: none
-
-    &:before
+    margin-left: 1em
+    &:after
       content: "↑"
-      display: inline-block
-      width: 1em
+      margin-left: 0.5em
+
+@media (max-width: $breakpoint)
+  .toc.user-toggle-toc
+    padding-bottom: 2em
+
+    & > h2:before
+      transform: translate(-7px, -1px) rotate(180deg)
+
+  .toc:not(.user-toggle-toc)
+    & > h2:before
+      transform: translate(0, 7px) rotate(90deg)
+
+    & > *:not(:first-child)
+      display: none
 
 @media (min-width: $breakpoint)
   main.has-toc
     grid-template-columns: 1fr 250px
     grid-template-areas: "title ." "article toc"
     column-gap: 2em
-
-    nav.toc
-      position: sticky
-      top: calc(1.5em * 2 + 1.1em + 1em)
-      align-self: start
 
   .toc
     h2
@@ -62,5 +85,12 @@ main.has-toc
       &:hover, &.active
         color: $highlight-color
 
-    a.back-to-top
-      display: block
+  .toc:not(.user-toggle-toc) > h2:before
+    transform: translate(-7px, -1px) rotate(180deg)
+
+  .toc.user-toggle-toc
+    & > h2:before
+      transform: translate(0, 7px) rotate(90deg)
+
+    & > *:not(:first-child)
+      display: none
