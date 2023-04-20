@@ -28,9 +28,6 @@ a
 .toc
   font-size: 11pt
 
-  h2
-    opacity: 0.8
-
   ul
     list-style: none
 
@@ -42,13 +39,20 @@ a
       margin-left: -1.2em
 
   a
-    color: $secondary-color
     text-decoration: none
-
-    &:hover, &.active
-      color: $highlight-color
 
   a.back-to-top:before
     content: "↑"
     display: inline-block
     width: 1em
+
+@media (min-width: $break-point)
+  .toc
+    h2
+      opacity: 0.8
+
+    a
+      color: $secondary-color
+
+      &:hover, &.active
+        color: $highlight-color
