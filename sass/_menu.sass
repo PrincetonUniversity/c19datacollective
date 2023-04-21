@@ -1,6 +1,12 @@
 @use "_base" as *
 
 #menu
+  width: 100%
+  padding: 1em 0
+  z-index: 50
+  position: sticky
+  top: 0
+
   a
     text-decoration: none
 
@@ -13,8 +19,6 @@
     display: none
 
   #menu-items
-    float: right
-    display: inline
     margin: 0
 
     li
@@ -26,6 +30,16 @@
       &:hover
         text-decoration: underline
 
+div.menu-inner
+  max-width: $max-two-col-width
+  width: 90%
+  height: 100%
+  margin: auto
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+
 @media (max-width: $breakpoint)
   #menu
     #menu-toggle-label
@@ -35,6 +49,7 @@
 
     #menu-items
       display: none
+      width: 100%
 
   input#menu-toggle-button:checked ~ #menu-items
     display: block

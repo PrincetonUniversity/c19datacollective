@@ -8,12 +8,6 @@ body
   display: flex
   flex-direction: column
 
-header
-  padding: 1.5em 1em
-  z-index: 50
-  position: sticky
-  top: 0
-
 .content
   flex: 1 0 auto
 
@@ -31,8 +25,8 @@ footer
 :target:before
   content: ""
   display: block
-  height: calc(1.5em * 2 + 1.1em)
-  margin: calc(-1.5em * 2 - 1.1em) 0 0 0
+  height: calc(1em * 2 + 1.1em)
+  margin: calc(-1em * 2 - 1.1em) 0 0 0
 
 img
   max-width: 100%
@@ -41,7 +35,3 @@ hr
   border: none
   border-top: 2px solid $heading-color
   margin: 3em 6em
-
-@media (min-width: $breakpoint)
-  header
-    padding: 1.5em 2em
