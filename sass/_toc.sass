@@ -1,7 +1,7 @@
 @use "_base" as *
 
 main.has-toc
-  max-width: $max-two-col-width
+  max-width: var(--max-two-col-width)
   display: grid
   grid-template-areas: "title" "toc" "article"
 
@@ -41,7 +41,7 @@ main.has-toc
 
       &:before
         content: "\2022"
-        color: $secondary-color
+        color: var(--secondary-color)
         display: inline-block
         width: 1em
         margin-left: -1.2em
@@ -80,10 +80,10 @@ main.has-toc
       opacity: 0.8
 
     a
-      color: $secondary-color
+      color: var(--secondary-color)
 
       &:hover, &.active
-        color: $highlight-color
+        color: var(--highlight-color)
 
   .toc:not(.user-toggle-toc) > h2:before
     transform: translate(-7px, -1px) rotate(180deg)
