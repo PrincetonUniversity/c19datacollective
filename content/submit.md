@@ -2,9 +2,7 @@
 title = "Submission"
 +++
 
-Before you submit, make sure you have the required materials needed for publishing a humanities dataset in the C19 Data Collective, which is supported by [Princeton’s Research Data Repository](https://datacommons.princeton.edu/discovery/).
-
-By following the steps outlined in the "[Criteria](/criteria)" tab of the website, you will have:
+Make sure you have followed the steps outlined in the "[Criteria](/criteria)" tab of the website. For submission, you should have:
 
 - A ["tidy" dataset](/criteria/dataset-preparation) in a stable format.
 - Complete [documentation](/criteria/data-documentation) about your dataset to support reuse.
