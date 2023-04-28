@@ -1,6 +1,7 @@
 @use "_base" as *
 
 $sans-serif-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$monospace-fonts: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace
 
 body
   color: var(--foreground-color)
@@ -25,3 +26,10 @@ h1
 
 a
   color: var(--highlight-color)
+
+code
+  font-family: $monospace-fonts
+  font-size: 85%
+  padding: .1em .2em
+  background-color: var(--background-color)
+  border-radius: 5px

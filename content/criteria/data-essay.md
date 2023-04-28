@@ -1,8 +1,9 @@
 +++
 title = "Data Essay Criteria"
+weight = 3
 +++
 
-To propose a dataset for inclusion in the collective, please submit a curatorial statement—a data essay—organized according to the criteria below and addressing these questions as relevant. The data essay should be around 1500 words, not including bibliography. It should make visible the choices and the labor that have gone into the creation of the data set and demonstrate the scholarly value of this data in its field.
+To propose a dataset for inclusion in the collective, please submit a curatorial statement—a data essay—organized according to the criteria below and addressing these questions as relevant. The data essay should be around 1500 words, not including bibliography. It should make visible the choices and the labor that have gone into the creation of the dataset and demonstrate the scholarly value of this data in its field.
 
 ## Basic Information
 
@@ -16,7 +17,7 @@ Include the following information about your dataset:
 
 ## Brief Project Description
 
-Briefly describe your data and the research question that led you to create this dataset. This section should explain the value of this data set, particularly its relevance to nineteenth-century studies (or another field). This section pertains to the data itself and possible or plausible analysis, not necessarily an analysis you have already undertaken. Cite sources in order to characterize the scholarly landscape (digital or traditional) that could either benefit from this dataset.
+Briefly describe your data and the research question that led you to create this dataset. This section should explain the value of this dataset, particularly its relevance to nineteenth-century studies (or another field). This section pertains to the data itself and possible or plausible analysis, not necessarily an analysis you have already undertaken. Cite sources in order to characterize the scholarly landscape (digital or traditional) that could either benefit from this dataset.
 
 How is the data relevant to nineteenth-century scholarship? Who might it be useful for? What could it be used for? Please suggest at least three specific uses.
 
@@ -24,7 +25,7 @@ For what purpose did you create the dataset? Was there a gap that needed to be f
 
 ## Collection & Creation Methodology
 
-This section should describe the choices that structured the creation of the data set, explain any categorical variables (if you have them), and discuss the labor and technology that went into data collection and creation. Please avoid passive voice.
+This section should describe the choices that structured the creation of the dataset, explain any categorical variables (if you have them), and discuss the labor and technology that went into data collection and creation. Please avoid passive voice.
 
 How did you acquire or create the data? If you acquired it, were there licenses and MOUs, institutional subscriptions or purchase agreements? Who paid for it or facilitated the transactions? If you created it, how? What mechanisms or procedures did you use to collect it (e.g. hardware apparatus, human curation, software, API)?
 
@@ -64,7 +65,7 @@ Can you anticipate any way that this data could be misused?
 
 ## Format
 
-Though the Collective aims to maximize interoperability, we recognize that data is messy. Please describe if your format necessitates changing or altering any existing standards. Post45 requires that data oriented around book titles must use columns that match those used by HathiTrust; 19thC prefers this as well but we are open to reasons why this cannot be the case. If it is a new category of data, the Collective will work with submissions (and perhaps across Collectives) toward creating exemplary standards.
+Though the Collective aims to maximize interoperability, we recognize that data is messy. Please describe if your format necessitates changing or altering any existing standards. Post45 requires that data oriented around book titles must use columns that match those used by HathiTrust; C19 prefers this as well but we are open to reasons why this cannot be the case. If it is a new category of data, the Collective will work with submissions (and perhaps across Collectives) toward creating exemplary standards.
 
 For further help, consider the following resources:
 
@@ -89,7 +90,7 @@ If applicable, the data must be deposited under an open license that permits unr
 
 ## Data Citation
 
-Any reason why the citation should not conform to the 19thC Data Collective standard citational practice?
+Any reason why the citation should not conform to the C19 Data Collective standard citational practice?
 
 ---
 
