@@ -22,6 +22,10 @@ disable_toc = true
 - [Benjamin Charles Germain Lee](https://bcglee.github.io/) (University of Washington)
 - [Katherine McDonough](https://www.turing.ac.uk/people/researchers/katherine-mcdonough) (The Alan Turing Institute)
 
+## Managing Data Editor
+
+- Sarah Reiff Conell (Princeton University)
+
 ## Managing Editors
 
 - [Anthie Georgiadi](https://english.princeton.edu/people/anthoula-georgiadi) (Princeton University)
