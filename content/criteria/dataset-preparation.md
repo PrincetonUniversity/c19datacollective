@@ -115,7 +115,7 @@ To view additional steps based on format, view the following primers created by 
 - [Jupyter Notebook](http://hdl.handle.net/11299/202815) Primer
 - [Microsoft Access](http://hdl.handle.net/11299/202827) Primer
 - [Microsoft Excel](http://hdl.handle.net/11299/202816) Primer
-- [netCDF](http://hdl.handle.net/2027.42/145724) Primer and [[Tutorial using NCAR dataset]{.underline}](http://hdl.handle.net/11299/202825)
+- [netCDF](http://hdl.handle.net/2027.42/145724) Primer and [Tutorial using NCAR dataset](http://hdl.handle.net/11299/202825)
 - [SPSS](http://hdl.handle.net/11299/202812) Primer
 - [STL](http://hdl.handle.net/11299/211352) Primer
 - [R](http://hdl.handle.net/11299/210209) Primer
