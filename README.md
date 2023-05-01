@@ -36,3 +36,7 @@ $ zola serve
 [zola]: https://www.getzola.org
 [zola-doc]: https://www.getzola.org/documentation/getting-started/installation/
 [zola-release]: https://github.com/getzola/zola/releases
+
+## License
+
+The code in this repository is under [the MIT license](LICENSE). All content that isn't code (under `content`) is released under [CC-BY-4.0](content/LICENSE).
