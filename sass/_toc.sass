@@ -34,18 +34,18 @@ main.has-toc
       vertical-align: middle
       width: 2em
 
+  h3 > a
+    color: var(--heading-color)
+    padding-left: 0.7em
+
   ul
-    list-style: none
+    padding-left: 2em
 
     li
-      margin: 0.2em 0
+      line-height: 1.7
 
-      &:before
-        content: "\2022"
+      &::marker
         color: var(--secondary-color)
-        display: inline-block
-        width: 1em
-        margin-left: -1.2em
 
   a
     text-decoration: none
@@ -78,6 +78,9 @@ main.has-toc
 
   .toc
     h2
+      opacity: 0.8
+
+    h3 > a
       opacity: 0.8
 
     a

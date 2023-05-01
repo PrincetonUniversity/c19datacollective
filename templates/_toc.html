@@ -1,6 +1,12 @@
 {# vim: filetype=htmldjango:
 #}
 
+{% set has_parent_section = page.components | length > 1 %}
+{% if has_parent_section %}
+  {% set section_name = page.relative_path | split(pat="/") | first %}
+  {% set section = get_section(path=section_name ~ "/_index.md") %}
+{% endif %}
+
 <nav class="toc">
   <h2>Table of Contents</h2>
   <ul>
@@ -19,5 +25,17 @@
     </li>
     {% endfor %}
   </ul>
+
+  {% if has_parent_section %}
+  <h3><a href="{{ section.path | safe }}">Also in {{ section_name | capitalize }}</a></h3>
+  <ul>
+    {% for section_page in section.pages %}
+      {% if section_page.path != page.path %}
+      <li><a href="{{ section_page.path | safe }}">{{ section_page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+
   <a href="#" class="back-to-top" onclick="document.documentElement.scrollTop = 0;"> Back to Top</a>
 </nav>
