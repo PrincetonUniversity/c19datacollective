@@ -106,7 +106,7 @@ Tasks vary based on file formats and subject domain. Sample tasks based on forma
 
 ### Others
 
-To view additional steps based on format, view the following primers created by the DCN:
+To view additional steps based on format, view the following primers created by the [Data Curation Network](https://datacurationnetwork.org) (DCN):
 
 - [Acrobat PDF](http://hdl.handle.net/11299/210210) Primer
 - [ATLAS.ti](http://hdl.handle.net/11299/210211) Primer
