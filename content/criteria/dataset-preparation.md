@@ -40,7 +40,7 @@ See U Gent’s short (5:42) video, "Knowledge Clip: Keeping research data organi
   - Record file organization, hierarchy, and naming convention(s)
   - Extract zip files when possible
 
-### Tidy your Data
+### Tidy your Data[^1]
 
 - Examine data (and/or code) for obvious errors/missing components, etc.
   - No conflation between missing and blank values
@@ -121,3 +121,5 @@ To view additional steps based on format, view the following primers created by 
 - [R](http://hdl.handle.net/11299/210209) Primer
 - [Tableau](http://hdl.handle.net/11299/210207) Primer
 - [Wordpress.com](http://hdl.handle.net/11299/202811) Primer
+
+[^1]: Tidy Data varies depending on sources and other aspects of inquiry. Tidy Data is not meant to erase or flatten historically complex data, rather it is the process by which this data becomes more usable for investigation and understanding through research.
