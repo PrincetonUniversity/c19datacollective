@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
+{% block frontmatter %}
+  <title>{{ page.title }} | {{ config.title }}</title>
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+  {% else %}
+    <meta name="description" content="{{ config.description }}" />
+  {% endif %}
+{% endblock frontmatter %}
+
 {% block content %}
   {% set has_toc = page.toc and not page.extra.disable_toc %}
 
