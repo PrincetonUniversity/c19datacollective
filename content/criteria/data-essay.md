@@ -65,12 +65,12 @@ Can you anticipate any way that this data could be misused?
 
 ## Format
 
-Though the Collective aims to maximize interoperability, we recognize that data is messy. Please describe if your format necessitates changing or altering any existing standards. Post45 requires that data oriented around book titles must use columns that match those used by HathiTrust; C19 prefers this as well but we are open to reasons why this cannot be the case. If it is a new category of data, the Collective will work with submissions (and perhaps across Collectives) toward creating exemplary standards.
+Check PDF for common accessibility issues. Resources for checking and techniques for improving accessibility in PDFs:
 
-For further help, consider the following resources:
+* <https://webaim.org/techniques/acrobat/acrobat>
+* <https://pdfua.foundation/en/pdf-accessibility-checker-pac/>
 
-- [Format your data](https://www.ukdataservice.ac.uk/manage-data/format.aspx) from the UK Data Service
-- [Sustainability of Digital Formats](http://www.digitalpreservation.gov/formats/fdd/descriptions.shtml) from the Library of Congress
+[Adobe has a built-in accessibility checker](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html) if you are working with those proprietary products already.
 
 ## Statement of Collaboration
 
