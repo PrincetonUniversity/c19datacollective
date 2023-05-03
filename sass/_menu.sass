@@ -28,7 +28,12 @@
       margin-left: 1.5em
 
       &:hover
-        text-decoration: underline
+        color: white
+        background-color: var(--highlight-color)
+        box-shadow: 0 0 0 0.5em var(--highlight-color)
+        border: none
+        border-radius: 1px
+        transition: all 0.1s
 
 div.menu-inner
   max-width: var(--max-two-col-width)
@@ -62,4 +67,5 @@ div.menu-inner
       margin: 1em 0 0 0
 
       a
+        display: block
         margin: 0
