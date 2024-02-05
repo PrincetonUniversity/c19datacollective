@@ -17,9 +17,8 @@ widely accessible. We particularly encourage inquiries and submissions from
 early career researchers and graduate students. Each accepted submission will
 receive a DOI to mark it as a peer-reviewed publication. Please review the full
 criteria for more information about how we are expanding what data can and
-should mean for our field. Please [contact us][contact] if you are interested in serving
-as a reviewer or have any questions.
+should mean for our field. Please {{ email(text="contact us") }} if you are
+interested in serving as a reviewer or have any questions.
 
 [caucus]: https://data-caucus.vercel.app
 [post45]: https://data.post45.org
-[contact]: mailto:19thCDataCollective@gmail.com

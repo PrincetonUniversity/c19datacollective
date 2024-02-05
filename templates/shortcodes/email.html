@@ -1,0 +1,7 @@
+<a href="mailto:{{ config.extra.email }}">
+  {% if text %}
+    {{ text }}
+  {% else %}
+    {{ config.extra.email }}
+  {% endif %}
+</a>
