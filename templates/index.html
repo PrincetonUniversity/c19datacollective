@@ -2,7 +2,8 @@
 
 {% block content %}
   <div id="hero">
-    <img src="/cover.jpg" alt="Cover image" />
+    {% set cover = resize_image(path="cover.jpg", width=1600, op="fit_width") %}
+    <img src="{{ cover.url }}" alt="Cover image" />
     <section>
       <h1>{{ config.title }}</h1>
       <p>
