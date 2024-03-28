@@ -254,8 +254,8 @@ NEH's Office of Digital Humanities [Guide to Data Management Plans](https://www.
 - browse projects featured in [_Journal of Open Humanities Data_](https://openhumanitiesdata.metajnl.com/)
   - "features peer reviewed publications describing humanities data
     or techniques with high potential for reuse"
-- Our extensive, curated list, organized by field and topic, available at:
-  [https://hc3.princeton.edu/humanities-datasets](https://hc3.princeton.edu/humanities-datasets)
+- Our extensive, curated list, organized by field and topic, available at: <https://cdh.princeton.edu/research/resources/humanities-datasets/>
+  
 - [To Be Continued...](https://katherinebode.wordpress.com/projects/to-be-continued/)
   - developed by Katherine Bode alongside her book _A World of
     Fiction: Digital Collections and the Future of Literary History_
