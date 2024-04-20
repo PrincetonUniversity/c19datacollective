@@ -1,4 +1,5 @@
 +++
+title = "Nineteenth-Century Data Collective"
 +++
 
 Not simply a static repository, the Nineteenth-Century Data Collective hopes to

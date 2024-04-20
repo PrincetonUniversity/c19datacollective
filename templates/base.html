@@ -1,48 +1,34 @@
-{# vim: filetype=htmldjango:
-#}
+{# vim: filetype=htmldjango: #}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/style.css">
+    {% block frontmatter %}
+      <title>{{ config.title }}</title>
+      <meta name="author" content="{{ config.extra.short_title }}" />
+      <meta name="description" content="{{ config.description }}" />
+    {% endblock frontmatter %}
 
-  {% block frontmatter %}
-    <title>{{ config.title }}</title>
-    <meta name="author" content="{{ config.extra.short_title }}">
-    <meta name="description" content="{{ config.description }}">
-  {% endblock frontmatter %}
-</head>
+    <script async src="/elasticlunr.min.js"></script>
+    <script async src="/search_index.en.js"></script>
+  </head>
 
-<body>
-  <header id="menu">
-    <div class="menu-inner">
-      <a id="menu-title" href="/">{{ config.extra.short_title }}</a>
-      <input id="menu-toggle-button" type="checkbox">
-      <label id="menu-toggle-label" for="menu-toggle-button">Menu</label>
-      <ul id="menu-items">
-        <li><a href="/submit">Submission</a></li>
-        <li><a href="/criteria">Criteria</a></li>
-        <li><a href="/resources">Resources</a></li>
-        <li><a href="/people">People</a></li>
-        <li><a href="mailto:{{ config.extra.email }}">Email Us</a></li>
-      </ul>
-    </div>
-  </header>
+  <body>
+    {% include "_menu.html" %}
 
-  <div class="content">
-    {% block content %}{% endblock %}
-  </div>
+    <div class="content">{% block content %}{% endblock %}</div>
 
-  <footer>
-    <div class="footer-inner">
-      <span>{{ config.extra.short_title }} &copy; 2023</span>
-    </div>
-  </footer>
+    <footer>
+      <div class="footer-inner">
+        <span>{{ config.extra.short_title }} &copy; 2023</span>
+      </div>
+    </footer>
 
-  <script defer src="/js/script.js"></script>
-</body>
-
+    <script defer src="/js/script.js"></script>
+    <script defer src="/js/search.js"></script>
+  </body>
 </html>

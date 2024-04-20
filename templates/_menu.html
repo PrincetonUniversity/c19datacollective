@@ -1,0 +1,27 @@
+<header id="menu">
+  <div class="menu-inner">
+    <a id="menu-title" href="/">{{ config.extra.short_title }}</a>
+    <input id="menu-toggle-button" type="checkbox" />
+    <label id="menu-toggle-label" for="menu-toggle-button">Menu</label>
+    <ul id="menu-items">
+      <li><a href="/submit">Submission</a></li>
+      <li><a href="/criteria">Criteria</a></li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/people">People</a></li>
+      <li><a href="mailto:{{ config.extra.email }}">Email Us</a></li>
+      <li><button popovertarget="search-dialog">Search</button></li>
+    </ul>
+  </div>
+</header>
+
+<dialog popover id="search-dialog">
+  <div id="search-dialog-inner">
+    <input
+      id="search-bar"
+      type="text"
+      placeholder="What are you looking for?"
+    />
+    <div id="search-results"><p>No results found.</p></div>
+    <button popovertarget="search-dialog">Close</button>
+  </div>
+</dialog>
