@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/style.css" />
 
     {% block frontmatter %}
-      <title>{{ config.title }}</title>
-      <meta name="author" content="{{ config.extra.short_title }}" />
-      <meta name="description" content="{{ config.description }}" />
+    <title>{{ config.title }}</title>
+    <meta name="author" content="{{ config.extra.short_title }}" />
+    <meta name="description" content="{{ config.description }}" />
     {% endblock frontmatter %}
 
     <script async src="/elasticlunr.min.js"></script>
@@ -24,6 +24,7 @@
 
     <footer>
       <div class="footer-inner">
+        <a href="mailto:{{ config.extra.email }}">Email Us</a>
         <span>{{ config.extra.short_title }} &copy; 2023</span>
       </div>
     </footer>

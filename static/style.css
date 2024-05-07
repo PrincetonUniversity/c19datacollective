@@ -49,9 +49,11 @@ footer {
   flex-shrink: 0;
 
   div.footer-inner {
-    max-width: var(--max-two-col-width);
+    max-width: var(--max-one-col-width);
     width: 90%;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -104,7 +106,12 @@ body {
 footer {
   background-color: var(--heading-color);
   color: white;
-  text-align: right;
+
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
 }
 
 h1,
