@@ -1,21 +1,5 @@
 {% extends "base.html" %}
 
-{% block frontmatter %}
-  <title>{{ page.title }} | {{ config.title }}</title>
-
-  {% for author in page.authors %}
-    <meta name="author" content="{{ author }}" />
-  {% endfor %}
-
-  {% if page.description %}
-    <meta name="description" content="{{ page.description }}" />
-  {% elif page.summary %}
-    <meta name="description" content="{{ page.summary }}" />
-  {% else %}
-    <meta name="description" content="{{ config.description }}" />
-  {% endif %}
-{% endblock frontmatter %}
-
 {% block main %}
   <h1>{{ page.title }}</h1>
 

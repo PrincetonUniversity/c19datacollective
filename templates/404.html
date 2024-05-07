@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block content %}
-<main>
+{% block title -%}
+  404 Not Found | {{ config.title }}
+{%- endblock title %}
+
+{% block main %}
   <h1>Page not Found</h1>
   <p>
     Something went wrong?
-    <a href="https://github.com/miyuchina/c19datacollective/issues/new">Submit an issue</a>
+    <a href="https://github.com/PrincetonUniversity/c19datacollective/issues/new">Submit an issue</a>
     or <a href="mailto:{{ config.extra.email }}">contact us</a>.
   </p>
-</main>
-{% endblock content %}
+{% endblock main %}
