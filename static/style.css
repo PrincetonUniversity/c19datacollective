@@ -195,7 +195,6 @@ code {
   }
 
   section {
-    text-shadow: 0 0 25px white;
     text-align: center;
     max-width: var(--max-one-col-width);
     width: 90%;
