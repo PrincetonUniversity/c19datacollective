@@ -31,7 +31,7 @@ function render_result(result) {
   result_heading.appendChild(document.createTextNode(result.doc.title));
 
   const result_preview = document.createElement("p");
-  const preview_text = result.doc.body.split(" ", 30).join(" ");
+  const preview_text = result.doc.body.split(" ", 50).join(" ");
   result_preview.appendChild(document.createTextNode(preview_text));
 
   result_div.appendChild(result_heading);
