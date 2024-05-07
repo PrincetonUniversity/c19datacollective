@@ -1,5 +1,5 @@
 function setResponsiveToc(toc_element) {
-  if (window.innerWidth < 800) {
+  if (window.innerWidth < 900) {
     // mobile windows default to hiding the ToC
     return toc_element.classList.replace("toc-show", "toc-hide");
   } else {
