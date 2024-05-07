@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 
+{% block main_class %}data-section{% endblock main_class %}
+
 {% block main %}
   <h1>{{ section.title }}</h1>
   {{ section.content | safe }}
 
   {% for page in section.pages %}
-    <h2><a href="{{ page.path | safe }}">{{ page.title }}</a></h2>
-    <h3 class="byline">Authors: {{ page.authors | join(sep=", ") }}</h3>
-    {% if page.description %}
-      <p>{{ page.description }}</p>
-    {% elif page.summary %}
-      {{ page.summary | safe }}
-    {% endif %}
+    <a href="{{ page.path | safe }}">
+      <h2>{{ page.title }}</h2>
+      <h3 class="byline">{{ page.authors | join(sep=", ") }}</h3>
+      {% if page.description %}
+        <p>{{ page.description }}</p>
+      {% elif page.summary %}
+        {{ page.summary | safe }}
+      {% endif %}
+    </a>
   {% endfor %}
 {% endblock main %}

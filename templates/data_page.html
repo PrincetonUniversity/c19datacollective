@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 
+{% block main_class %}data-page{% endblock main_class %}
+
 {% block main %}
   <h1>{{ page.title }}</h1>
 
-  <ul class="metadata">
+  <dl class="metadata">
     {% if page.authors %}
-      <li>Authors: {{ page.authors | join(sep=", ") }}</li>
+      <dt>Author(s)</dt>
+      <dd>{{ page.authors | join(sep=", ") }}</dd>
     {% endif %}
     {% if page.date %}
-      <li>Date: {{ page.date }}</li>
+      <dt>Date</dt>
+      <dd>{{ page.date }}</dd>
     {% endif %}
     {% if page.extra.doi %}
-      <li>DOI: <a href="https://doi.org/{{ page.extra.doi }}">{{ page.extra.doi }}</a></li>
+      <dt>DOI</dt>
+      <dd><a href="https://doi.org/{{ page.extra.doi }}">{{ page.extra.doi }}</a></dd>
     {% endif %}
-  </ul>
+  </dl>
+
+  <article>{{ page.content | safe }}</article>
 
   <section id="data-viewer">
     <h2>Data</h2>
@@ -21,6 +28,4 @@
       Loading data ...
     </div>
   </section>
-
-  <article>{{ page.content | safe }}</article>
-{% endblock content %}
+{% endblock main %}
