@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block main_pre %}
   <div id="hero">
     {% set cover = resize_image(path="cover.jpg", width=1600, op="fit_width") %}
     <img src="{{ cover.url }}" alt="Cover image" />
@@ -15,8 +15,8 @@
       </div>
     </section>
   </div>
+{% endblock main_pre %}
 
-  <main>
-    {{ section.content | safe }}
-  </main>
-{% endblock content %}
+{% block main %}
+  {{ section.content | safe }}
+{% endblock main %}

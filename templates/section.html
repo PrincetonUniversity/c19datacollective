@@ -9,16 +9,14 @@
   {% endif %}
 {% endblock frontmatter %}
 
-{% block content %}
-  <main>
-    <h1>{{ section.title }}</h1>
-    <article>
-      {{ section.content | safe }}
-    </article>
-    <ul>
-      {% for page in section.pages %}
+{% block main %}
+  <h1>{{ section.title }}</h1>
+  <article>
+    {{ section.content | safe }}
+  </article>
+  <ul>
+    {% for page in section.pages %}
       <li><a href="{{ page.path | safe }}">{{ page.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </main>
+    {% endfor %}
+  </ul>
 {% endblock content %}

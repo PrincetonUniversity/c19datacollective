@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/style.css" />
 
     {% block frontmatter %}
-    <title>{{ config.title }}</title>
-    <meta name="author" content="{{ config.extra.short_title }}" />
-    <meta name="description" content="{{ config.description }}" />
+      <title>{{ config.title }}</title>
+      <meta name="author" content="{{ config.extra.short_title }}" />
+      <meta name="description" content="{{ config.description }}" />
     {% endblock frontmatter %}
 
     <script async src="/elasticlunr.min.js"></script>
@@ -20,7 +20,12 @@
   <body>
     {% include "_menu.html" %}
 
-    <div class="content">{% block content %}{% endblock %}</div>
+    {% block main_pre %}{% endblock main_pre %}
+
+    <main class="{% block main_class %}{% endblock main_class %}">
+      {% block main %}
+      {% endblock main %}
+    </main>
 
     <footer>
       <div class="footer-inner">

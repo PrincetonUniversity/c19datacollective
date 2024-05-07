@@ -28,15 +28,12 @@ body {
   flex-direction: column;
 }
 
-.content {
-  flex: 1 0 auto;
-}
-
 main {
   /* overridden if page has a ToC */
   max-width: var(--max-one-col-width);
   width: 90%;
   margin: auto;
+  flex: 1 0 auto;
 }
 
 article {
