@@ -98,9 +98,6 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.6;
   font-size: 13pt;
-  overflow-wrap: anywhere;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 footer {
@@ -351,7 +348,6 @@ code {
 
     p {
       overflow: hidden;
-      hyphens: none;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
