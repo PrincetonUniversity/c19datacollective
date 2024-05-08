@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block metadata %}
+  <link rel="stylesheet" href="/data_page.css" />
+{% endblock metadata %}
+
 {% block main_class %}data-page{% endblock main_class %}
 
 {% block main %}
@@ -22,10 +26,27 @@
 
   <article>{{ page.content | safe }}</article>
 
-  <section id="data-viewer">
+  <section id="dataview">
     <h2>Data</h2>
-    <div id="data-viewer-content">
-      Loading data ...
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Filename</th>
+          <th scope="col">Description</th>
+          <th scope="col">Size</th>
+        </tr>
+      </thead>
+      <tbody id="dataview-body">
+        <tr>
+          <td>Loading data ...</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Also available at <a href="{{ page.extra.pdc_url | safe }}">Princeton Data Commons</a>.</p>
   </section>
+
+  <script>
+    const PDC_URL = "{{ page.extra.pdc_url | safe }}";
+  </script>
+  <script defer src="/js/dataview.js"></script>
 {% endblock main %}

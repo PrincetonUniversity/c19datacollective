@@ -1,0 +1,82 @@
+main.data-page {
+  max-width: var(--max-two-col-width);
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  .metadata {
+    padding: 1em 0;
+    font-size: large;
+    line-height: 2;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: max-content;
+
+    dt {
+      font-weight: bold;
+      color: var(--heading-color);
+    }
+
+    dd {
+      margin: 0;
+      grid-column-start: 2;
+    }
+  }
+
+  p {
+    margin: 2em 0;
+    line-height: 1.7;
+  }
+
+  article::first-letter {
+    -webkit-initial-letter: 6;
+    initial-letter: 6;
+    color: var(--highlight-color);
+  }
+}
+
+#dataview {
+  overflow: scroll;
+
+  table {
+    border-spacing: 5px;
+    margin: 0 -5px 0 -5px;
+  }
+
+  td {
+    white-space: nowrap;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}
+
+/* || RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  main.data-page {
+    h1 {
+      font-size: 2em;
+    }
+
+    .metadata {
+      font-size: 1em;
+    }
+
+    article::first-letter {
+      -webkit-initial-letter: 4;
+      initial-letter: 4;
+    }
+  }
+}
