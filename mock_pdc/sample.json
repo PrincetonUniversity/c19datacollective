@@ -1,0 +1,33 @@
+{
+  "id": "123456",
+  "title": "Sample Project",
+  "files": [
+    {
+      "source": "pdc_describe",
+      "full_path": "SCoData_members_v1_2020-07.csv",
+      "name": "sample.csv",
+      "extension": "csv",
+      "size": "1001953",
+      "download_url": "http://localhost:8000/sample.csv",
+      "description": "Data in CSV format",
+      "mime_type": "application/octet-stream",
+      "sequence": 7,
+      "handle": "88435/dsp0105741v63x"
+    },
+    {
+      "source": "dataspace",
+      "name": "sample-2.csv",
+      "size": "100",
+      "download_url": "http://localhost:8000/sample-2.csv",
+      "description": "CSV data, but from Princeton DataSpace (no live preview)"
+    },
+    {
+      "name": "readme.txt",
+      "size": "4567",
+      "download_url": "http://localhost:8000/readme.txt",
+      "description": "Any other file format (direct download)"
+    }
+  ],
+  "rights": [],
+  "authors": []
+}
