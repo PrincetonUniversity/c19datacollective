@@ -39,14 +39,22 @@ main.data-page {
 }
 
 #dataview {
-  overflow: scroll;
+  overflow-x: scroll;
 
   table {
-    border-spacing: 5px;
-    margin: 0 -5px 0 -5px;
+    min-width: 100%;
+    text-align: left;
+    border-collapse: collapse;
   }
 
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+
+  th,
   td {
+    padding: 2px 1em;
+    border: 1px solid #e5e4e2;
     white-space: nowrap;
   }
 

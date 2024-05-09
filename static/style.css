@@ -12,7 +12,7 @@
   --max-one-col-width: 650px;
 
   /* Z-index for menu (always on top) */
-  --menu-z-index: 50;
+  --menu-z-index: 1000;
 }
 
 /* || GENERAL */
