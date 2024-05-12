@@ -146,10 +146,14 @@ async function render_csv(name, url) {
         licenseKey: "non-commercial-and-evaluation",
       });
 
-      search_el.addEventListener("keyup", (e) => {
-        table.getPlugin("search").query(e.target.value);
-        table.render();
-      });
+      search_el.addEventListener(
+        "input",
+        debounce((e) => {
+          console.log("search");
+          table.getPlugin("search").query(e.target.value);
+          table.render();
+        }, 250),
+      );
     },
   });
 
@@ -204,25 +208,6 @@ function parse_csv(url, start, n_items, step_proc) {
       }
     },
   });
-}
-
-function el(el_name, attrs, content) {
-  const element = document.createElement(el_name);
-  for (key in attrs) {
-    if (key === "click") {
-      element.addEventListener(key, attrs[key]);
-    } else {
-      element.setAttribute(key, attrs[key]);
-    }
-  }
-  if (typeof content === "string") {
-    element.append(document.createTextNode(content));
-  } else if (Array.isArray(content)) {
-    element.append(...content);
-  } else {
-    element.append(content);
-  }
-  return element;
 }
 
 function format_bytes(x) {
