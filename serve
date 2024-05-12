@@ -1,0 +1,6 @@
+#!/bin/sh
+
+zola serve -i 0.0.0.0 &
+./mock_pdc/run &
+
+wait
