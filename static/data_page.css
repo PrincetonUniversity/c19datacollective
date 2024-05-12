@@ -41,6 +41,16 @@ main.data-page {
 #dataview {
   overflow-x: scroll;
 
+  input[type="search"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--foreground-color);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 2em 0;
+    font-size: 0.8em;
+  }
+
   table {
     min-width: 100%;
     text-align: left;
