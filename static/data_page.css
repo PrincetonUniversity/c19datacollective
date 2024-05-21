@@ -36,6 +36,14 @@ main.data-page {
     initial-letter: 6;
     color: var(--highlight-color);
   }
+
+  .bibliography {
+    font-size: smaller;
+    p {
+      margin: 1em 0;
+      text-indent: 3em hanging;
+    }
+  }
 }
 
 #dataview {
