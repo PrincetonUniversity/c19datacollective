@@ -41,6 +41,39 @@ main.data-page {
 #dataview {
   overflow-x: scroll;
 
+  .paginate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between;
+    font-size: 1em;
+    overflow: hidden;
+
+    :first-child {
+      padding-left: 1em;
+    }
+  }
+
+  .paginate-btns {
+    > * {
+      padding: 0 0.8em;
+      margin: 0 0.2em;
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: white;
+      background-color: var(--highlight-color);
+      box-shadow: 0 0 0 0.2em var(--highlight-color);
+      border-radius: 1px;
+    }
+  }
+
   input[type="search"] {
     outline: none;
     border: none;
