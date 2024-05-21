@@ -55,7 +55,6 @@ main.data-page {
     gap: 1em;
     justify-content: space-between;
     font-size: 1em;
-    overflow: hidden;
 
     :first-child {
       padding-left: 1em;
