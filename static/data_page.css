@@ -58,6 +58,11 @@ main.data-page {
     }
   }
 
+  select {
+    font-size: 1em;
+    margin: 0 0.5em;
+  }
+
   .paginate > div:first-child {
     margin-left: 1.1em;
   }

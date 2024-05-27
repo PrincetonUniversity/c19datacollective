@@ -1,7 +1,7 @@
 function el(el_name, attrs, content) {
   const element = document.createElement(el_name);
   for (key in attrs) {
-    if (key === "click") {
+    if (key === "click" || key === "change") {
       element.addEventListener(key, attrs[key]);
     } else if (key === "class") {
       if (Array.isArray(attrs[key])) {

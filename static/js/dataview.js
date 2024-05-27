@@ -7,8 +7,6 @@ const HANDSONTABLE_CSS_URL =
 const PAPAPARSE_URL =
   "https://cdn.jsdelivr.net/npm/papaparse@5.4/papaparse.min.js";
 
-const ITEMS_PER_PAGE = 10;
-
 let libraries_loaded = new Set();
 
 function write_to_canvas(...elements) {
@@ -31,18 +29,15 @@ async function get_files(pdc_url) {
   return metadata.files.sort();
 }
 
-function render_files(files, page_num) {
-  let start_i = (page_num - 1) * ITEMS_PER_PAGE;
-  let end_i = start_i + ITEMS_PER_PAGE;
+function render_files(files, page_num, items_per_page) {
+  let start_i = (page_num - 1) * items_per_page;
+  let end_i = start_i + items_per_page;
+  let max_pages = Math.ceil(files.length / items_per_page);
 
   return [
     el("div", { class: "paginate" }, [
-      el(
-        "div",
-        {},
-        `Showing ${start_i + 1} to ${Math.min(end_i, files.length)} of ${files.length} entries.`,
-      ),
-      render_pagination(files.length, page_num),
+      render_entries_toolbar(start_i, end_i, files.length, items_per_page),
+      render_pagination(page_num, max_pages, items_per_page),
     ]),
     el("table", {}, [
       el(
@@ -59,58 +54,95 @@ function render_files(files, page_num) {
   ];
 }
 
-function render_pagination(length, page_num) {
-  let max_pages = Math.ceil(length / ITEMS_PER_PAGE);
+function render_entries_toolbar(start_i, end_i, length, items_per_page) {
+  let options = [10, 25, 50, 100].map((n) => {
+    return el(
+      "option",
+      items_per_page === n ? { selected: "selected" } : {},
+      n.toString(),
+    );
+  });
+  return el("div", {}, [
+    el(
+      "span",
+      {},
+      `Showing ${start_i + 1} to ${Math.min(end_i, length)} of ${length} entries;`,
+    ),
+    el("span", {}, [
+      el(
+        "select",
+        {
+          id: "items-per-page",
+          change: async (e) => {
+            let new_items_per_page = parseInt(e.target.value);
+            const files = await get_files(PDC_URL);
+            write_to_canvas(render_files(files, 1, new_items_per_page));
+          },
+        },
+        options,
+      ),
+      "entries per page.",
+    ]),
+  ]);
+}
 
+function render_pagination(page_num, max_pages, items_per_page) {
   return el("div", { class: "paginate-btns" }, [
     el(
       "button",
       {
         class: ["paginate-btn", "paginate-prev-next"],
-        click: paginate_onclick(page_num - 1, max_pages),
+        click: paginate_onclick(page_num - 1, max_pages, items_per_page),
       },
       "Previous",
     ),
-    ...render_paginate_btns(length, page_num),
+    ...render_paginate_btns(page_num, max_pages, items_per_page),
     el(
       "button",
       {
         class: ["paginate-btn", "paginate-prev-next"],
-        click: paginate_onclick(page_num + 1, max_pages),
+        click: paginate_onclick(page_num + 1, max_pages, items_per_page),
       },
       "Next",
     ),
   ]);
 }
 
-function render_paginate_btns(length, page_num) {
-  let max_pages = Math.ceil(length / ITEMS_PER_PAGE);
-  let elements = [render_paginate_btn(1, page_num, max_pages)];
+function render_paginate_btns(page_num, max_pages, items_per_page) {
+  let elements = [render_paginate_btn(1, page_num, max_pages, items_per_page)];
 
   if (page_num - 2 > 2) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   for (
-    let i = Math.min(Math.max(page_num - 2, 2), max_pages - 5);
-    i <= Math.max(Math.min(page_num + 2, max_pages - 1), 6);
+    i = Math.min(Math.max(page_num - 2, 2), Math.max(max_pages - 5, 2));
+    i <=
+    Math.max(Math.min(page_num + 2, max_pages - 1), Math.min(6, max_pages - 1));
     i++
   ) {
-    elements.push(render_paginate_btn(i, page_num, max_pages));
+    elements.push(render_paginate_btn(i, page_num, max_pages, items_per_page));
   }
 
-  if (page_num + 3 < max_pages) {
+  if (i + 1 < max_pages) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   if (page_num <= max_pages) {
-    elements.push(render_paginate_btn(max_pages, page_num, max_pages));
+    elements.push(
+      render_paginate_btn(max_pages, page_num, max_pages, items_per_page),
+    );
   }
 
   return elements;
 }
 
-function render_paginate_btn(page_num, current_page, max_pages) {
+function render_paginate_btn(
+  page_num,
+  current_page,
+  max_pages,
+  items_per_page,
+) {
   if (current_page === page_num) {
     return el("span", { class: "paginate-btn" }, page_num.toString());
   }
@@ -118,16 +150,18 @@ function render_paginate_btn(page_num, current_page, max_pages) {
     "button",
     {
       class: "paginate-btn",
-      click: paginate_onclick(page_num, max_pages),
+      click: paginate_onclick(page_num, max_pages, items_per_page),
     },
     page_num.toString(),
   );
 }
 
-function paginate_onclick(page_num, max_pages) {
+function paginate_onclick(page_num, max_pages, items_per_page) {
   return async (_) => {
     const files = await get_files(PDC_URL);
-    write_to_canvas(render_files(files, clamp(page_num, 1, max_pages)));
+    write_to_canvas(
+      render_files(files, clamp(page_num, 1, max_pages), items_per_page),
+    );
   };
 }
 
@@ -176,9 +210,9 @@ async function render_csv(name, url) {
       "a",
       {
         href: "#dataview",
-        click: (e) => {
+        click: async (e) => {
           e.preventDefault();
-          init_dataview();
+          await init_dataview();
         },
       },
       "click here to return to file list.",
