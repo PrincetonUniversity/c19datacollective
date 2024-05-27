@@ -3,6 +3,12 @@ function el(el_name, attrs, content) {
   for (key in attrs) {
     if (key === "click") {
       element.addEventListener(key, attrs[key]);
+    } else if (key === "class") {
+      if (Array.isArray(attrs[key])) {
+        attrs[key].forEach((class_name) => element.classList.add(class_name));
+      } else {
+        element.classList.add(attrs[key]);
+      }
     } else {
       element.setAttribute(key, attrs[key]);
     }

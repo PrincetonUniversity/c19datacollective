@@ -50,36 +50,47 @@ main.data-page {
   overflow-x: scroll;
 
   .paginate {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    justify-content: space-between;
     font-size: 1em;
     overflow-x: scroll;
 
-    :first-child {
-      padding-left: 1em;
+    > div {
+      margin: 0 0 1em 0;
     }
   }
 
-  .paginate-btns {
-    > * {
-      padding: 0 0.8em;
-      margin: 0 0.2em;
-    }
+  .paginate > div:first-child {
+    margin-left: 1.1em;
+  }
 
-    a {
-      text-decoration: none;
-      transition: all 0.2s;
-    }
+  .paginate-btns > * {
+    display: inline-block;
+    text-align: center;
+    width: 3em;
+    line-height: 1.7;
+    margin: 0 0.1em;
+  }
 
-    a:hover {
-      text-decoration: none;
-      color: white;
-      background-color: var(--highlight-color);
-      box-shadow: 0 0 0 0.2em var(--highlight-color);
-      border-radius: 1px;
-    }
+  .paginate-btn.paginate-prev-next {
+    width: 6em;
+  }
+
+  button.paginate-btn {
+    text-decoration: none;
+    transition: all 0.2s;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    font-size: 1em;
+    color: var(--highlight-color);
+    cursor: pointer;
+  }
+
+  span.paginate-btn {
+    text-decoration: none;
+    color: white;
+    background-color: var(--highlight-color);
+    border-radius: 0.2em;
   }
 
   input[type="search"] {

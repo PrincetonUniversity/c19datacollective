@@ -36,9 +36,9 @@ function render_files(files, page_num) {
   let end_i = start_i + ITEMS_PER_PAGE;
 
   return [
-    el("p", { class: "paginate" }, [
+    el("div", { class: "paginate" }, [
       el(
-        "span",
+        "div",
         {},
         `Showing ${start_i + 1} to ${Math.min(end_i, files.length)} of ${files.length} entries.`,
       ),
@@ -62,22 +62,20 @@ function render_files(files, page_num) {
 function render_pagination(length, page_num) {
   let max_pages = Math.ceil(length / ITEMS_PER_PAGE);
 
-  return el("span", { class: "paginate-btns" }, [
+  return el("div", { class: "paginate-btns" }, [
     el(
-      "a",
+      "button",
       {
-        class: "previous-btn",
-        href: "#dataview",
+        class: ["paginate-btn", "paginate-prev-next"],
         click: paginate_onclick(page_num - 1, max_pages),
       },
       "Previous",
     ),
     ...render_paginate_btns(length, page_num),
     el(
-      "a",
+      "button",
       {
-        class: "next-btn",
-        href: "#dataview",
+        class: ["paginate-btn", "paginate-prev-next"],
         click: paginate_onclick(page_num + 1, max_pages),
       },
       "Next",
@@ -87,37 +85,39 @@ function render_pagination(length, page_num) {
 
 function render_paginate_btns(length, page_num) {
   let max_pages = Math.ceil(length / ITEMS_PER_PAGE);
-  let elements = [render_paginate_btn(1, max_pages)];
+  let elements = [render_paginate_btn(1, page_num, max_pages)];
 
-  if (page_num > 2) {
+  if (page_num - 2 > 2) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   for (
-    let i = Math.max(page_num - 2, 2);
-    i <= Math.min(page_num + 2, max_pages - 1);
+    let i = Math.min(Math.max(page_num - 2, 2), max_pages - 5);
+    i <= Math.max(Math.min(page_num + 2, max_pages - 1), 6);
     i++
   ) {
-    elements.push(render_paginate_btn(i, max_pages));
+    elements.push(render_paginate_btn(i, page_num, max_pages));
   }
 
-  if (page_num + 2 < max_pages) {
+  if (page_num + 3 < max_pages) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   if (page_num <= max_pages) {
-    elements.push(render_paginate_btn(max_pages, max_pages));
+    elements.push(render_paginate_btn(max_pages, page_num, max_pages));
   }
 
   return elements;
 }
 
-function render_paginate_btn(page_num, max_pages) {
+function render_paginate_btn(page_num, current_page, max_pages) {
+  if (current_page === page_num) {
+    return el("span", { class: "paginate-btn" }, page_num.toString());
+  }
   return el(
-    "a",
+    "button",
     {
       class: "paginate-btn",
-      href: "#dataview",
       click: paginate_onclick(page_num, max_pages),
     },
     page_num.toString(),
@@ -125,8 +125,7 @@ function render_paginate_btn(page_num, max_pages) {
 }
 
 function paginate_onclick(page_num, max_pages) {
-  return async (event) => {
-    event.preventDefault();
+  return async (_) => {
     const files = await get_files(PDC_URL);
     write_to_canvas(render_files(files, clamp(page_num, 1, max_pages)));
   };
