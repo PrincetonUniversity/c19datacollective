@@ -7,7 +7,96 @@ const HANDSONTABLE_CSS_URL =
 const PAPAPARSE_URL =
   "https://cdn.jsdelivr.net/npm/papaparse@5.4/papaparse.min.js";
 
-let libraries_loaded = new Set();
+let model = {
+  files: undefined,
+  page_num: 1,
+  items_per_page: 10,
+  mode: "file",
+  filename: undefined,
+  url: undefined,
+  libraries_loaded: false,
+
+  get max_pages() {
+    if (this.files === undefined) {
+      throw new ReferenceError("files is not defined for the current model.");
+    }
+    return Math.ceil(this.files.length / this.items_per_page);
+  },
+
+  get length() {
+    if (this.files === undefined) {
+      throw new ReferenceError("files is not defined for the current model.");
+    }
+    return this.files.length;
+  },
+
+  get start_i() {
+    return (this.page_num - 1) * this.items_per_page;
+  },
+
+  get end_i() {
+    return this.page_num * this.items_per_page;
+  },
+};
+
+function render(model) {
+  if (model.files === undefined) {
+    load_files();
+    return [el("p", {}, "Loading files ...")];
+  }
+  switch (model.mode) {
+    case "file":
+      return render_files(model);
+
+    case "csv":
+      return render_csv(model);
+
+    default:
+      return [el("p", {}, "Hmm, something went wrong. Try again?")];
+  }
+}
+
+async function load_files() {
+  model.files = await get_files(PDC_URL);
+  model.page_num = 1;
+  model.items_per_page = 10;
+  model.mode = "file";
+  write_to_canvas(...render(model));
+}
+
+async function load_libraries() {
+  document.head.appendChild(
+    el("link", { rel: "stylesheet", href: HANDSONTABLE_CSS_URL }, []),
+  );
+  await Promise.all([load_js(HANDSONTABLE_JS_URL), load_js(PAPAPARSE_URL)]);
+
+  model.libraries_loaded = true;
+  write_to_canvas(...render(model));
+}
+
+function to_file_mode() {
+  model.mode = "file";
+  write_to_canvas(...render(model));
+}
+
+function to_csv_mode(filename, url) {
+  model.mode = "csv";
+  model.filename = filename;
+  model.url = url;
+  write_to_canvas(...render(model));
+}
+
+function goto_page(page_num) {
+  model.page_num = clamp(page_num, 1, model.max_pages);
+  write_to_canvas(...render(model));
+}
+
+function change_items_per_page(items_per_page) {
+  model.page_num = 1;
+  model.items_per_page = items_per_page;
+  model.mode = "file";
+  write_to_canvas(...render(model));
+}
 
 function write_to_canvas(...elements) {
   if (elements.length === 1 && Array.isArray(elements[0])) {
@@ -17,27 +106,11 @@ function write_to_canvas(...elements) {
   }
 }
 
-async function init_dataview() {
-  // PDC_URL loaded through template
-  const files = await get_files(PDC_URL);
-  write_to_canvas(render_files(files, 1, 10));
-}
-
-async function get_files(pdc_url) {
-  const response = await fetch(pdc_url + ".json");
-  const metadata = await response.json();
-  return metadata.files.sort();
-}
-
-function render_files(files, page_num, items_per_page) {
-  let start_i = (page_num - 1) * items_per_page;
-  let end_i = start_i + items_per_page;
-  let max_pages = Math.ceil(files.length / items_per_page);
-
+function render_files(model) {
   return [
     el("div", { class: "paginate" }, [
-      render_entries_toolbar(start_i, end_i, files.length, items_per_page),
-      render_pagination(page_num, max_pages, items_per_page),
+      render_entries_toolbar(model),
+      render_pagination(model),
     ]),
     el("table", {}, [
       el(
@@ -49,35 +122,35 @@ function render_files(files, page_num, items_per_page) {
           el("th", { scope: "col" }, "Size"),
         ]),
       ),
-      el("tbody", {}, files.slice(start_i, end_i).map(render_file_row)),
+      el(
+        "tbody",
+        {},
+        model.files.slice(model.start_i, model.end_i).map(render_file_row),
+      ),
     ]),
   ];
 }
 
-function render_entries_toolbar(start_i, end_i, length, items_per_page) {
+function render_entries_toolbar(model) {
   let options = [10, 25, 50, 100].map((n) => {
     return el(
       "option",
-      items_per_page === n ? { selected: "selected" } : {},
+      model.items_per_page === n ? { selected: "selected" } : {},
       n.toString(),
     );
   });
-  return el("div", {}, [
+  return el("div", { class: "entries-toolbar" }, [
     el(
       "span",
       {},
-      `Showing ${start_i + 1} to ${Math.min(end_i, length)} of ${length} entries;`,
+      `Showing ${model.start_i + 1} to ${Math.min(model.end_i, model.length)} of ${model.length} entries;`,
     ),
     el("span", {}, [
       el(
         "select",
         {
           id: "items-per-page",
-          change: async (e) => {
-            let new_items_per_page = parseInt(e.target.value);
-            const files = await get_files(PDC_URL);
-            write_to_canvas(render_files(files, 1, new_items_per_page));
-          },
+          change: (e) => change_items_per_page(parseInt(e.target.value)),
         },
         options,
       ),
@@ -86,63 +159,62 @@ function render_entries_toolbar(start_i, end_i, length, items_per_page) {
   ]);
 }
 
-function render_pagination(page_num, max_pages, items_per_page) {
+function render_pagination(model) {
   return el("div", { class: "paginate-btns" }, [
     el(
       "button",
       {
         class: ["paginate-btn", "paginate-prev-next"],
-        click: paginate_onclick(page_num - 1, max_pages, items_per_page),
+        click: (_) => goto_page(model.page_num - 1),
       },
       "Previous",
     ),
-    ...render_paginate_btns(page_num, max_pages, items_per_page),
+    ...render_paginate_btns(model),
     el(
       "button",
       {
         class: ["paginate-btn", "paginate-prev-next"],
-        click: paginate_onclick(page_num + 1, max_pages, items_per_page),
+        click: (_) => goto_page(model.page_num + 1),
       },
       "Next",
     ),
   ]);
 }
 
-function render_paginate_btns(page_num, max_pages, items_per_page) {
-  let elements = [render_paginate_btn(1, page_num, max_pages, items_per_page)];
+function render_paginate_btns(model) {
+  let elements = [render_paginate_btn(1, model.page_num)];
 
-  if (page_num - 2 > 2) {
+  if (model.page_num - 2 > 2) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   for (
-    i = Math.min(Math.max(page_num - 2, 2), Math.max(max_pages - 5, 2));
+    i = Math.min(
+      Math.max(model.page_num - 2, 2),
+      Math.max(model.max_pages - 5, 2),
+    );
     i <=
-    Math.max(Math.min(page_num + 2, max_pages - 1), Math.min(6, max_pages - 1));
+    Math.max(
+      Math.min(model.page_num + 2, model.max_pages - 1),
+      Math.min(6, model.max_pages - 1),
+    );
     i++
   ) {
-    elements.push(render_paginate_btn(i, page_num, max_pages, items_per_page));
+    elements.push(render_paginate_btn(i, model.page_num));
   }
 
-  if (i + 1 < max_pages) {
+  if (i + 1 < model.max_pages) {
     elements.push(el("span", { class: "paginate-ellipses" }, "..."));
   }
 
-  if (page_num <= max_pages) {
-    elements.push(
-      render_paginate_btn(max_pages, page_num, max_pages, items_per_page),
-    );
+  if (model.page_num <= model.max_pages) {
+    elements.push(render_paginate_btn(model.max_pages, model.page_num));
   }
 
   return elements;
 }
 
-function render_paginate_btn(
-  page_num,
-  current_page,
-  max_pages,
-  items_per_page,
-) {
+function render_paginate_btn(page_num, current_page) {
   if (current_page === page_num) {
     return el("span", { class: "paginate-btn" }, page_num.toString());
   }
@@ -150,19 +222,10 @@ function render_paginate_btn(
     "button",
     {
       class: "paginate-btn",
-      click: paginate_onclick(page_num, max_pages, items_per_page),
+      click: (_) => goto_page(page_num),
     },
     page_num.toString(),
   );
-}
-
-function paginate_onclick(page_num, max_pages, items_per_page) {
-  return async (_) => {
-    const files = await get_files(PDC_URL);
-    write_to_canvas(
-      render_files(files, clamp(page_num, 1, max_pages), items_per_page),
-    );
-  };
 }
 
 function render_file_row(file) {
@@ -183,9 +246,9 @@ function render_filename_from_file(file) {
           "a",
           {
             href: "#dataview",
-            click: async (e) => {
+            click: (e) => {
               e.preventDefault();
-              write_to_canvas(await render_csv(file.name, file.download_url));
+              to_csv_mode(file.name, file.download_url);
             },
           },
           file.name,
@@ -197,14 +260,17 @@ function render_filename_from_file(file) {
   }
 }
 
-async function render_csv(name, url) {
-  await load_libraries();
+function render_csv(model) {
+  if (!model.libraries_loaded) {
+    load_libraries();
+    return [el("p", {}, "Waiting for CSV libraries ...")];
+  }
 
   const return_el = el("p", { class: "return" }, [
     "You are viewing ",
-    el("code", {}, name),
+    el("code", {}, model.filename),
     ". ",
-    el("a", { href: url }, "Download this file"),
+    el("a", { href: model.url }, "Download this file"),
     ", or ",
     el(
       "a",
@@ -212,7 +278,7 @@ async function render_csv(name, url) {
         href: "#dataview",
         click: async (e) => {
           e.preventDefault();
-          await init_dataview();
+          to_file_mode();
         },
       },
       "click here to return to file list.",
@@ -238,7 +304,7 @@ async function render_csv(name, url) {
     ),
   );
 
-  Papa.parse(url, {
+  Papa.parse(model.url, {
     download: true,
     skipEmptyLines: true,
     complete: (result) => {
@@ -281,32 +347,22 @@ async function render_csv(name, url) {
   return [return_el, search_el, table_el];
 }
 
-async function load_libraries() {
-  if (!libraries_loaded.has(HANDSONTABLE_CSS_URL)) {
-    document.head.appendChild(
-      el("link", { rel: "stylesheet", href: HANDSONTABLE_CSS_URL }, []),
-    );
-    libraries_loaded.add(HANDSONTABLE_CSS_URL);
-  }
-
-  await Promise.all([load_js(HANDSONTABLE_JS_URL), load_js(PAPAPARSE_URL)]);
+async function get_files(pdc_url) {
+  const response = await fetch(pdc_url + ".json");
+  const metadata = await response.json();
+  return metadata.files.sort();
 }
 
 function load_js(url) {
   return new Promise((resolve, reject) => {
-    if (libraries_loaded.has(url)) {
+    let script = el("script", { type: "text/javascript" }, []);
+    // make sure that onload event fires
+    document.head.appendChild(script);
+    script.onload = () => {
       resolve();
-    } else {
-      let script = el("script", { type: "text/javascript" }, []);
-      // make sure that onload event fires
-      document.head.appendChild(script);
-      script.onload = () => {
-        libraries_loaded.add(url);
-        resolve();
-      };
-      script.onerror = reject;
-      script.src = url;
-    }
+    };
+    script.onerror = reject;
+    script.src = url;
   });
 }
 
@@ -355,4 +411,4 @@ function clamp(number, min, max) {
   return Math.max(min, Math.min(number, max));
 }
 
-init_dataview();
+write_to_canvas(render(model));

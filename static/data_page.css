@@ -63,8 +63,12 @@ main.data-page {
     margin: 0 0.5em;
   }
 
-  .paginate > div:first-child {
+  .paginate > :not(.paginate-btns) {
     margin-left: 1.1em;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 1em;
   }
 
   .paginate-btns > * {

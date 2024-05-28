@@ -33,9 +33,11 @@
     </div>
     <p>Also available at <a href="{{ page.extra.pdc_url | safe }}">Princeton Data Commons</a>.</p>
   </section>
+{% endblock main %}
 
+{% block scripts %}
   <script>
     const PDC_URL = "{{ page.extra.pdc_url | safe }}";
   </script>
   <script defer src="/js/dataview.js"></script>
-{% endblock main %}
+{% endblock scripts %}
