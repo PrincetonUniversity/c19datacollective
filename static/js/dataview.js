@@ -370,27 +370,6 @@ function load_js(url) {
   });
 }
 
-function parse_csv(url, start, n_items, step_proc) {
-  return Papa.parse(url, {
-    download: true,
-    skipEmptyLines: true,
-    worker: true,
-    step: (result, parser) => {
-      if (start > 0) {
-        // skip lines until the `start` index
-        start--;
-      } else if (n_items > 0) {
-        // parse `n_items` number of lines
-        step_proc(result.data);
-        n_items--;
-      } else {
-        // ignore the rest
-        parser.abort();
-      }
-    },
-  });
-}
-
 function format_bytes(x) {
   const units = [
     "bytes",
