@@ -7,6 +7,28 @@ const HANDSONTABLE_CSS_URL =
 const PAPAPARSE_URL =
   "https://cdn.jsdelivr.net/npm/papaparse@5.4/papaparse.min.js";
 
+const HANDSONTABLE_OPTS = {
+  readOnly: true,
+  autoWrapRow: true,
+  autoWrapCol: true,
+  dropdownMenu: true,
+  hiddenColumns: {
+    indicators: true,
+  },
+  multiColumnSorting: true,
+  manualColumnResize: true,
+  manualRowMove: true,
+  manualColumnMove: true,
+  search: true,
+  filters: true,
+  rowHeaders: true,
+  autoWrapCol: true,
+  autoWrapRow: true,
+  colWidths: 200,
+  height: "80vh",
+  licenseKey: "non-commercial-and-evaluation",
+};
+
 let model = {
   files: undefined,
   page_num: 1,
@@ -312,25 +334,7 @@ function render_csv(model) {
       const table = new Handsontable(table_el, {
         data: result.data,
         colHeaders: header,
-        readOnly: true,
-        autoWrapRow: true,
-        autoWrapCol: true,
-        dropdownMenu: true,
-        hiddenColumns: {
-          indicators: true,
-        },
-        multiColumnSorting: true,
-        manualColumnResize: true,
-        manualRowMove: true,
-        manualColumnMove: true,
-        search: true,
-        filters: true,
-        rowHeaders: true,
-        autoWrapCol: true,
-        autoWrapRow: true,
-        colWidths: 200,
-        height: "80vh",
-        licenseKey: "non-commercial-and-evaluation",
+        ...HANDSONTABLE_OPTS,
       });
 
       search_el.addEventListener(
