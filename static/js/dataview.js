@@ -30,25 +30,39 @@ const HANDSONTABLE_OPTS = {
 };
 
 let model = {
-  files: undefined,
+  _files: undefined,
   page_num: 1,
   items_per_page: 10,
+  filters: [],
   mode: "file",
   filename: undefined,
   url: undefined,
   libraries_loaded: false,
 
-  get max_pages() {
-    if (this.files === undefined) {
-      throw new ReferenceError("files is not defined for the current model.");
+  get files() {
+    if (this._files === undefined) {
+      load_files();
+      return undefined;
     }
-    return Math.ceil(this.files.length / this.items_per_page);
+
+    if (this.filters.length === 0) {
+      return this._files;
+    } else {
+      return this._files.filter((file) =>
+        this.filters.includes(file.extension),
+      );
+    }
+  },
+
+  set files(files) {
+    this._files = files;
+  },
+
+  get max_pages() {
+    return Math.ceil(this.length / this.items_per_page);
   },
 
   get length() {
-    if (this.files === undefined) {
-      throw new ReferenceError("files is not defined for the current model.");
-    }
     return this.files.length;
   },
 
@@ -59,11 +73,14 @@ let model = {
   get end_i() {
     return this.page_num * this.items_per_page;
   },
+
+  get extensions() {
+    return [...new Set(this._files.map((file) => file.extension))];
+  },
 };
 
 function render(model) {
   if (model.files === undefined) {
-    load_files();
     return [el("p", {}, "Loading files ...")];
   }
   switch (model.mode) {
@@ -120,6 +137,15 @@ function change_items_per_page(items_per_page) {
   write_to_canvas(...render(model));
 }
 
+function toggle_filter(filter) {
+  if (model.filters.includes(filter)) {
+    model.filters.splice(model.filters.indexOf(filter), 1);
+  } else {
+    model.filters.push(filter);
+  }
+  write_to_canvas(...render(model));
+}
+
 function write_to_canvas(...elements) {
   if (elements.length === 1 && Array.isArray(elements[0])) {
     DATAVIEW_CANVAS.replaceChildren(...elements[0]);
@@ -132,6 +158,7 @@ function render_files(model) {
   return [
     el("div", { class: "paginate" }, [
       render_entries_toolbar(model),
+      render_filters_toolbar(model),
       render_pagination(model),
     ]),
     el("table", {}, [
@@ -178,6 +205,33 @@ function render_entries_toolbar(model) {
       ),
       "entries per page.",
     ]),
+  ]);
+}
+
+function render_filters_toolbar(model) {
+  let checkboxes = model.extensions.flatMap((extension) => {
+    let checkbox = el(
+      "input",
+      {
+        type: "checkbox",
+        class: "filter-checkbox",
+        id: `filter-${extension}`,
+        name: extension,
+        change: (_) => toggle_filter(extension),
+      },
+      [],
+    );
+    if (model.filters.includes(extension)) {
+      checkbox.checked = true;
+    }
+    return [
+      checkbox,
+      el("label", { for: `filter-${extension}` }, extension.toUpperCase()),
+    ];
+  });
+  return el("div", { class: "filters-toolbar" }, [
+    el("span", {}, "Filter by extension:"),
+    ...checkboxes,
   ]);
 }
 
