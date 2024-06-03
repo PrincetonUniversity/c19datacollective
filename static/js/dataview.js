@@ -204,33 +204,56 @@ function render_pagination(model) {
 }
 
 function render_paginate_btns(model) {
-  let elements = [render_paginate_btn(1, model.page_num)];
+  let total_btns = 7;
+  let page_nums = [];
+  if (model.max_pages <= total_btns) {
+    for (let i = 1; i <= model.max_pages; i++) {
+      page_nums.push(i);
+    }
+  } else {
+    page_nums.push(model.page_num);
+    total_btns--;
 
-  if (model.page_num - 2 > 2) {
-    elements.push(el("span", { class: "paginate-ellipses" }, "..."));
+    if (model.page_num !== 1) {
+      page_nums.push(1);
+      total_btns--;
+    }
+
+    if (model.page_num !== model.max_pages) {
+      page_nums.push(model.max_pages);
+      total_btns--;
+    }
+
+    for (let i = 1; total_btns > 0; i++) {
+      if (i % 2 === 0) {
+        let page_num = model.page_num + -i / 2;
+        if (page_num > 1) {
+          page_nums.push(page_num);
+          total_btns--;
+        }
+      } else {
+        let page_num = model.page_num + (i + 1) / 2;
+        if (page_num < model.max_pages) {
+          page_nums.push(page_num);
+          total_btns--;
+        }
+      }
+    }
   }
+  page_nums.sort((a, b) => a - b);
 
-  for (
-    i = Math.min(
-      Math.max(model.page_num - 2, 2),
-      Math.max(model.max_pages - 5, 2),
-    );
-    i <=
-    Math.max(
-      Math.min(model.page_num + 2, model.max_pages - 1),
-      Math.min(6, model.max_pages - 1),
-    );
-    i++
+  let elements = page_nums.map((num) =>
+    render_paginate_btn(num, model.page_num),
+  );
+
+  if (page_nums.at(1) !== undefined && page_nums.at(1) > 2) {
+    elements.splice(1, 0, el("span", { class: "paginate-ellipses" }, "..."));
+  }
+  if (
+    page_nums.at(-2) !== undefined &&
+    page_nums.at(-2) < model.max_pages - 1
   ) {
-    elements.push(render_paginate_btn(i, model.page_num));
-  }
-
-  if (i + 1 < model.max_pages) {
-    elements.push(el("span", { class: "paginate-ellipses" }, "..."));
-  }
-
-  if (model.page_num <= model.max_pages) {
-    elements.push(render_paginate_btn(model.max_pages, model.page_num));
+    elements.splice(-1, 0, el("span", { class: "paginate-ellipses" }, "..."));
   }
 
   return elements;
