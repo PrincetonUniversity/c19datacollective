@@ -100,7 +100,7 @@ async function load_files() {
   model.page_num = 1;
   model.items_per_page = 10;
   model.mode = "file";
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 async function load_libraries() {
@@ -110,31 +110,31 @@ async function load_libraries() {
   await Promise.all([load_js(HANDSONTABLE_JS_URL), load_js(PAPAPARSE_URL)]);
 
   model.libraries_loaded = true;
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 function to_file_mode() {
   model.mode = "file";
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 function to_csv_mode(filename, url) {
   model.mode = "csv";
   model.filename = filename;
   model.url = url;
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 function goto_page(page_num) {
   model.page_num = clamp(page_num, 1, model.max_pages);
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 function change_items_per_page(items_per_page) {
   model.page_num = 1;
   model.items_per_page = items_per_page;
   model.mode = "file";
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
 function toggle_filter(filter) {
@@ -143,15 +143,11 @@ function toggle_filter(filter) {
   } else {
     model.filters.push(filter);
   }
-  write_to_canvas(...render(model));
+  write_to_canvas(render(model));
 }
 
-function write_to_canvas(...elements) {
-  if (elements.length === 1 && Array.isArray(elements[0])) {
-    DATAVIEW_CANVAS.replaceChildren(...elements[0]);
-  } else {
-    DATAVIEW_CANVAS.replaceChildren(...elements);
-  }
+function write_to_canvas(elements) {
+  DATAVIEW_CANVAS.replaceChildren(...elements);
 }
 
 function render_files(model) {
