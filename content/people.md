@@ -9,6 +9,7 @@ disable_toc = true
 
 - [Megan Ward](https://liberalarts.oregonstate.edu/users/megan-ward) (Oregon State University)
 - [Meredith Martin](https://english.princeton.edu/people/meredith-martin) (Princeton University)
+- Sarah Reiff Conell (Princeton University)
 
 ## Editorial Board
 
@@ -21,10 +22,6 @@ disable_toc = true
 - [Catherine DeRose](http://www.catherinederose.com/) (Independent Scholar)
 - [Benjamin Charles Germain Lee](https://bcglee.github.io/) (University of Washington)
 - [Katherine McDonough](https://www.turing.ac.uk/people/researchers/katherine-mcdonough) (The Alan Turing Institute)
-
-## Managing Data Editor
-
-- Sarah Reiff Conell (Princeton University)
 
 ## Managing Editors
 
