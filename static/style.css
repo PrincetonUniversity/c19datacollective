@@ -126,6 +126,15 @@ a {
   color: var(--highlight-color);
 }
 
+pre {
+  overflow: scroll;
+  padding: 1em;
+
+  > code {
+    background: none;
+  }
+}
+
 code {
   font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
