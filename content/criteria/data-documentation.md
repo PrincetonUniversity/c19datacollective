@@ -19,6 +19,8 @@ Examine the dataset closely to understand what it is, how the files interrelate,
 
 ### A README file
 
+[See here for a README template.](/criteria/readme-template)
+
 Acceptable formats include `txt`, `rtf`, or `mdl`. For more information about READMEs, see [Cornell University’s Guide to writing “readme” style metadata](https://data.research.cornell.edu/content/readme).
 
 - Include complete documentation about your dataset
