@@ -10,11 +10,13 @@
     <a href="{{ page.path | safe }}">
       <h2>{{ page.title }}</h2>
       <h3 class="byline">{{ page.authors | join(sep=", ") }}</h3>
-      {% if page.description %}
-        <p>{{ page.description }}</p>
-      {% elif page.summary %}
-        {{ page.summary | safe }}
-      {% endif %}
+      <p>
+        {% if page.description %}
+          {{ page.description }}
+        {% elif page.summary %}
+          {{ page.summary | striptags | safe }}
+        {% endif %}
+      </p>
     </a>
   {% endfor %}
 {% endblock main %}
