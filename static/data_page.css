@@ -31,7 +31,7 @@ main.data-page {
     line-height: 1.7;
   }
 
-  article::first-letter {
+  article > p:first-child:first-letter {
     -webkit-initial-letter: 6;
     initial-letter: 6;
     color: var(--highlight-color);
