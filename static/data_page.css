@@ -31,12 +31,6 @@ main.data-page {
     line-height: 1.7;
   }
 
-  article > p:first-child:first-letter {
-    -webkit-initial-letter: 6;
-    initial-letter: 6;
-    color: var(--highlight-color);
-  }
-
   .bibliography {
     font-size: smaller;
     p {
