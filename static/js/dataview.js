@@ -55,7 +55,7 @@ let model = {
   },
 
   set files(files) {
-    this._files = files;
+    this._files = files.filter((file) => !file.full_path.endsWith("/"));
   },
 
   get max_pages() {
