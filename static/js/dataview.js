@@ -343,15 +343,15 @@ function render_filename_from_file(file) {
             href: "#dataview",
             click: (e) => {
               e.preventDefault();
-              to_csv_mode(file.name, file.download_url);
+              to_csv_mode(file.full_path, file.download_url);
             },
           },
-          file.name,
+          file.full_path,
         );
       }
 
     default:
-      return el("a", { href: file.download_url }, file.name);
+      return el("a", { href: file.download_url }, file.full_path);
   }
 }
 
