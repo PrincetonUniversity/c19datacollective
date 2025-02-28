@@ -12,6 +12,7 @@ Data recently released by the Library of Congress (LC) allows us to
 assess this historical claim in new ways, but not in the format in which
 it was originally released.
 """
+draft = true
 
 [extra]
 doi = "10.34770/xcgb-zn76"
