@@ -25,6 +25,12 @@ $ nix-env -iA nixpkgs.zola
 
 Alternatively, download the appropriate Zola binary from [the GitHub release page][zola-release].
 
+### Clone the Repository
+
+```sh
+$ git clone https://github.com/PrincetonUniversity/c19datacollective.git
+```
+
 ### Generate the Site
 
 This will build and serve the site at `127.0.0.1:1111`:
@@ -33,10 +39,162 @@ This will build and serve the site at `127.0.0.1:1111`:
 $ zola serve
 ```
 
-[zola]: https://www.getzola.org
-[zola-doc]: https://www.getzola.org/documentation/getting-started/installation/
-[zola-release]: https://github.com/getzola/zola/releases
+## Publishing a new Dataset
+
+All new publications are included as [pages][zola-pages] under a [section][zola-section] called ["data"][c19-data].
+Before you begin, make sure you've completed the [Getting Started](#getting-started) steps above.
+
+### Convert the Data Essay
+
+If the data essay is in another file format than Markdown, convert it to Markdown first.
+[Pandoc][pandoc] is a good tool for converting most file formats to Markdown:
+
+```sh
+$ pandoc essay.docx -o essay.md
+```
+
+### Handling Bibliography
+
+If the data essay has a bibliography,
+make sure each bibliographical item is its own paragraph in Markdown
+(i.e., surrounded by empty lines).
+Then, at the top of the bibliography, include the line `{% bibliography() %}`;
+at the bottom, include `{% end %}`.
+Your bibliography should look something like this:
+
+```markdown
+{% bibliography() %}
+Einstein, Albert. "On the Electrodynamics of Moving Bodies." _Annalen der Physik_ 17.10 (1905): 891-921.
+
+Marx, Karl. _Capital: A Critique of Political Economy_. Translated by Ben Fowkes, vol. 1, Penguin Books, 1981.
+
+Wordsworth, William, and Samuel Taylor Coleridge. _Lyrical Ballads: 1798 and 1802_. Edited by Fiona Stafford, Oxford University Press, 2013.
+{% end %}
+```
+
+`bibliography()` is a [Zola shortcode][zola-shortcode] that [takes an optional argument][bib-shortcode] `title`,
+which the site will use as the heading of the bibliographical section.
+To use "Works Cited" as the heading instead of the default "Bibliography", for example, you can write:
+
+```markdown
+{% bibliography(title="Works Cited") %}
+Your citations.
+{% end %}
+```
+
+### Handling Images and Figures
+
+Zola supports [a feature called "asset colocation,"][zola-colocation]
+which means that you can have a directory structure like this:
+
+```
+.
+└── content
+    ├── _index.md
+    └── data
+        ├── _index.md
+        ├── essay-with-images
+        │   ├── index.md
+        │   ├── image1.png
+        │   ├── image2.png
+        │   └── figure.png
+        └── another-essay.md
+```
+
+Inside `essay-with-images/index.md`, you can refer to images by their relative path:
+
+```markdown
+Here is an image: ![image 1](image1.png)
+```
+
+For named figures that one can link to elsewhere in the essay,
+you can use the [`figure()` shortcode][figure-shortcode]:
+
+```markdown
+A paragraph with [a link to the figure](#fig-1).
+
+{{ figure(src="figure.png", caption="Figure 1: Growth of London population in 1882", id="fig-1") }}
+
+More text after the figure, which can [link to the figure as well](#fig-1).
+```
+
+### Adding Frontmatter
+
+[Zola uses TOML to include metadata][zola-frontmatter] about its pages.
+At the top of the data essay, fill in the following frontmatter:
+
+```markdown
++++
+title = "The Title of the Dataset"
+authors = ["Karl Marx", "Friedrich Engels"]
+date = 2025-03-28
+description = """
+Optional description, which will be displayed as a preview for the dataset.
+"""
+
+[extra]
+doi = "10.12345/abcd-ef67"
+pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-12345-abcd-ef67"
++++
+```
+
+* `title` will automatically be rendered as the heading of the data essay,
+  so no need to include it separately within the essay itself.
+
+* `description` will be used as a preview in the listing on [Our Data][our-data].
+  If you don't specify it in the frontmatter,
+  you can alternatively use [the `<!-- more -->` tag][zola-summary] within the body of the essay.
+
+* `extra.doi` will be rendered under the heading of the data essay.
+
+* `extra.pdc_url` is a link to the location of the dataset in [Princeton Data Commons][pdc],
+  which will be used to [render a preview of the dataset][dataview-impl]
+  (file lists and CSV previews are dynamically generated).
+
+### Naming and Placing the Data Essay
+
+If the data essay does not include any images,
+you can simply place it under `content/data`.
+The name of the Markdown file corresponds to the [slug][wiki-slug] of the generated page.
+For example, a file called `another-essay.md` will be accessible at `https://c19datacollective.com/data/another-essay/`.
+
+If you use the asset colocation feature described in the [Handling Images and Figures][#handling-images-and-figures] step,
+you should save the data essay as `content/data/essay-with-images/index.md`.
+This essay will then be accessible at `https://c19datacollective.com/data/essay-with-images/`.
+
+### Pushing Changes to the Website
+
+Make sure the new data essay looks the way you want by running `zola serve` and navigating to `127.0.0.1:1111`.
+If everything looks good, create a commit with the new data essay:
+
+```sh
+$ git add -A
+$ git commit -m "content: Title of the New Data Essay"
+$ git push
+```
+
+Pushing to this repository triggers [a GitHub action][zola-gh-action] which automatically rebuilds the site.
+You should be able to see the new essay live in a few minutes.
 
 ## License
 
 The code in this repository is under [the MIT license](LICENSE). All content that isn't code (under `content`) is released under [CC-BY-4.0](content/LICENSE).
+
+[zola]: https://www.getzola.org
+[zola-doc]: https://www.getzola.org/documentation/getting-started/installation/
+[zola-release]: https://github.com/getzola/zola/releases
+[zola-pages]: https://www.getzola.org/documentation/content/page/
+[zola-section]: https://www.getzola.org/documentation/content/section/
+[c19-data]: https://github.com/PrincetonUniversity/c19datacollective/tree/main/content/data
+[pandoc]: https://pandoc.org
+[zola-shortcode]: https://www.getzola.org/documentation/content/shortcodes/
+[bib-shortcode]: https://github.com/PrincetonUniversity/c19datacollective/blob/main/templates/shortcodes/bibliography.html
+[zola-colocation]: https://www.getzola.org/documentation/content/overview/#asset-colocation
+[figure-shortcode]: https://github.com/PrincetonUniversity/c19datacollective/blob/main/templates/shortcodes/figure.html
+[zola-frontmatter]: https://www.getzola.org/documentation/content/page/#front-matter
+[our-data]: https://c19datacollective.com/data/
+[zola-summary]: https://www.getzola.org/documentation/content/page/#summary
+[pdc]: https://datacommons.princeton.edu/discovery/
+[dataview-impl]: https://github.com/PrincetonUniversity/c19datacollective/blob/main/static/js/dataview.js
+[wiki-slug]: https://en.wikipedia.org/wiki/Clean_URL#Slug
+[zola-gh-action]: https://www.getzola.org/documentation/deployment/github-pages/
