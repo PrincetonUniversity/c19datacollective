@@ -158,7 +158,7 @@ you can simply place it under `content/data`.
 The name of the Markdown file corresponds to the [slug][wiki-slug] of the generated page.
 For example, a file called `another-essay.md` will be accessible at `https://c19datacollective.com/data/another-essay/`.
 
-If you use the asset colocation feature described in the [Handling Images and Figures][#handling-images-and-figures] step,
+If you use the asset colocation feature described in the [Handling Images and Figures](https://github.com/PrincetonUniversity/c19datacollective#handling-images-and-figures) step,
 you should save the data essay as `content/data/essay-with-images/index.md`.
 This essay will then be accessible at `https://c19datacollective.com/data/essay-with-images/`.
 
