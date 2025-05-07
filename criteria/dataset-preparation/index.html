@@ -1,0 +1,323 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" /><title>Dataset Preparation | Nineteenth-Century Data Collective</title>
+    <meta name="author" content="C19 Data Collective" />
+    <meta name="description" content="The Nineteenth-Century Data Collective peer-reviews and houses literary or cultural data, circa 1800-1900, on an open-access website." />
+
+    <script async src="/elasticlunr.min.js"></script>
+    <script async src="/search_index.en.js"></script>
+  </head>
+
+  <body>
+    <header id="menu">
+  <div class="menu-inner">
+    <a id="menu-title" href="/">C19 Data Collective</a>
+    <input id="menu-toggle-button" type="checkbox" />
+    <label id="menu-toggle-label" for="menu-toggle-button">Menu</label>
+    <ul id="menu-items">
+      <li><a href="/submit">Submission</a></li>
+      <li><a href="/criteria">Criteria</a></li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/data">Our Data</a></li>
+      <li><a href="/people">People</a></li>
+      <li><button popovertarget="search-dialog">Search</button></li>
+    </ul>
+  </div>
+</header>
+
+<dialog popover id="search-dialog">
+  <div id="search-dialog-inner">
+    <input
+      id="search-bar"
+      type="search"
+      placeholder="What are you looking for?"
+    />
+    <div id="search-results"><p>No results found.</p></div>
+    <button popovertarget="search-dialog">Close</button>
+  </div>
+</dialog>
+
+
+    
+
+    <main class="
+  
+  
+    has-toc
+  
+">
+      
+  
+  <h1>Dataset Preparation</h1>
+  
+    
+
+
+
+  
+  
+
+
+<nav class="toc toc-show">
+  <h2>Table of Contents</h2>
+  <ul>
+    
+      <li>
+        <a href="#file-organization">File Organization</a>
+        
+      </li>
+    
+      <li>
+        <a href="#key-ethical-considerations">Key Ethical Considerations</a>
+        
+      </li>
+    
+      <li>
+        <a href="#essential-tasks">Essential Tasks</a>
+        
+          <ul>
+            
+              <li>
+                <a href="#survey-your-data">Survey your Data</a>
+              </li>
+            
+              <li>
+                <a href="#tidy-your-data">Tidy your Data</a>
+              </li>
+            
+              <li>
+                <a href="#strengthen-your-data">Strengthen your Data</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#tasks-based-on-format">Tasks based on Format</a>
+        
+          <ul>
+            
+              <li>
+                <a href="#tabular-data-e-g-microsoft-excel-questions">Tabular Data (e.g, Microsoft Excel) Questions</a>
+              </li>
+            
+              <li>
+                <a href="#database-s-questions">Database(s) Questions</a>
+              </li>
+            
+              <li>
+                <a href="#code-questions">Code Questions</a>
+              </li>
+            
+              <li>
+                <a href="#data-visualization-questions">Data Visualization Questions</a>
+              </li>
+            
+              <li>
+                <a href="#others">Others</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+  
+    <h3><a href="/criteria/">Also in Criteria</a></h3>
+    <ul>
+      
+        
+      
+        
+          <li><a href="/criteria/data-documentation/">Data Documentation</a></li>
+        
+      
+        
+          <li><a href="/criteria/data-essay/">Data Essay Criteria</a></li>
+        
+      
+        
+          <li><a href="/criteria/metadata/">Metadata</a></li>
+        
+      
+    </ul>
+  
+
+  <a href="#" class="back-to-top" onclick="document.documentElement.scrollTop = 0;"> Back to Top</a>
+</nav>
+
+<script defer src="/js/toc.js"></script>
+
+  
+  <article>
+    <p>Prepare your dataset by inventorying and reviewing the contents to ensure that you are providing the data in the most useful and sustainable form as possible:</p>
+<ul>
+<li>Review to ensure data files are in a preferred format (ie. non proprietary)</li>
+<li>Create an inventory of the contents of your data files (e.g., data file inventory)</li>
+<li>Describe your naming conventions and ensure they are followed in your folder and file names</li>
+<li>Make sure you have the cleanest data set possible ready for publication.</li>
+</ul>
+<h2 id="file-organization">File Organization</h2>
+<ul>
+<li>File Naming Conventions</li>
+<li>Folder Structure or Hierarchy</li>
+<li>Version Control Strategies</li>
+</ul>
+<p>See U Gent’s short (5:42) video, “Knowledge Clip: Keeping research data organized”:</p>
+<div class="youtube-embed">
+  <iframe
+    src="https://www.youtube.com/embed/YslfY4W-NAg"
+    allowfullscreen
+    frameborder="0"
+  >
+  </iframe>
+</div>
+<h2 id="key-ethical-considerations">Key Ethical Considerations</h2>
+<ul>
+<li>Review any data use agreements and examine potential impacts of sharing this data. Consider:
+<ul>
+<li>Individuals and communities represented</li>
+<li>Representativeness of diverse human populations</li>
+<li>Geographic locations (e.g., contested boundaries, historical and current political situations)</li>
+</ul>
+</li>
+<li>Is it possible that the dataset may impact a specific group?
+<ul>
+<li>Use the CARE Principles for Indigenous Data</li>
+</ul>
+</li>
+<li>Does this dataset comply with any known institutional policies?</li>
+</ul>
+<h2 id="essential-tasks">Essential Tasks</h2>
+<h3 id="survey-your-data">Survey your Data</h3>
+<ul>
+<li>Gather working copy of files for formal inventory and publication</li>
+<li>Inventory your dataset
+<ul>
+<li>Identify file formats (transform to preferred format as needed)</li>
+<li>Record file organization, hierarchy, and naming convention(s)</li>
+<li>Extract zip files when possible</li>
+</ul>
+</li>
+</ul>
+<h3 id="tidy-your-data">Tidy your Data<sup class="footnote-reference"><a href="#1">1</a></sup></h3>
+<ul>
+<li>Examine data (and/or code) for obvious errors/missing components, etc.
+<ul>
+<li>No conflation between missing and blank values</li>
+</ul>
+</li>
+<li>What is the nature of your data?
+<ul>
+<li>Original/pure, and needing to be preserved?</li>
+<li>Crude/nascent, and not valuable until processed?</li>
+<li>Erroneous/tainted, and problematic if not cleaned?</li>
+</ul>
+</li>
+<li>What is the dataset trying to do?
+<ul>
+<li>What’s the picture it is providing?</li>
+<li>What were the steps to get to your destination?</li>
+<li>What were the blockers and friction points?</li>
+</ul>
+</li>
+<li>Given your source materials and intentions, what does tidy look like?
+<ul>
+<li>Good, working order (can people use it to investigate)</li>
+<li>Durable usability</li>
+<li>Linked to Taxonomies and/or Controlled Vocabularies (e.g. <a href="https://www.getty.edu/research/tools/vocabularies/lod/">Getty Vocabularies</a>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="strengthen-your-data">Strengthen your Data</h3>
+<p>Examine files, organization, and documentation:</p>
+<ul>
+<li>Are there changes that could enhance the dataset?
+<ul>
+<li>Are there missing data?</li>
+<li>Could a user with similar qualifications to the author’s understand and reuse these data and reproduce the results?</li>
+<li>Are the data, documentation and/or metadata presented in a way that aids in interpretation? (e.g., readme Example)</li>
+</ul>
+</li>
+<li>Ensure all files are in non-proprietary file formats. Recommended formats:
+<ul>
+<li><code>txt</code>, <code>xml</code>, and <code>html</code> for textual data;</li>
+<li><code>csv</code> for tabular data;</li>
+<li><code>csv</code> and <code>xml</code> for databases;</li>
+<li><code>tiff</code>, <code>png</code>, or <code>jpg</code> for images;</li>
+<li><code>mp3</code>, <code>wav</code>, or <code>flac</code> for audio files.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tasks-based-on-format">Tasks based on Format</h2>
+<p>Tasks vary based on file formats and subject domain. Sample tasks based on format:</p>
+<h3 id="tabular-data-e-g-microsoft-excel-questions">Tabular Data (e.g, Microsoft Excel) Questions</h3>
+<ul>
+<li>Check the organization of the data–is it well-structured?</li>
+<li>Are headers/codes clearly defined?</li>
+<li>Is quality control clearly defined?</li>
+<li>Is methodology clear and sufficient?</li>
+</ul>
+<h3 id="database-s-questions">Database(s) Questions</h3>
+<ul>
+<li>Is there documentation on tables, relationships, queries, etc?</li>
+<li>Can the data be exported (to CSV(s), TXT or other) easily?</li>
+<li>Which tables or queries (if any) are used in a publication?</li>
+</ul>
+<h3 id="code-questions">Code Questions</h3>
+<ul>
+<li>Does the provided code execute without errors?</li>
+<li>Is the code commented, i.e., did the author provide descriptive information on sections of code?</li>
+<li>Is data for input missing? Are environmental conditions and parameters noted? Is it clear which language(s) and version(s) are used?</li>
+<li>Does the code use absolute paths or relative paths? If absolute paths, is this documented in the readme?</li>
+<li>Are packages or additional libraries used? If so, is this noted with clear use instructions?</li>
+<li>Are data organized consistently for access by code ?</li>
+<li>Is there an indication of whether the depositor intends reusers to be able to run the code and reproduce results, or just see the process used?</li>
+</ul>
+<h3 id="data-visualization-questions">Data Visualization Questions</h3>
+<ul>
+<li>Review alt-text and visualization descriptions. Ensure these describe, but do not interpret, associated visualizations.</li>
+<li>Check data visualizations follow accessible color contrast guidelines</li>
+</ul>
+<h3 id="others">Others</h3>
+<p>To view additional steps based on format, view the following primers created by the <a href="https://datacurationnetwork.org">Data Curation Network</a> (DCN):</p>
+<ul>
+<li><a href="http://hdl.handle.net/11299/210210">Acrobat PDF</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/210211">ATLAS.ti</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/202823">Geodatabase</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/210208">GeoJSON</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/202815">Jupyter Notebook</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/202827">Microsoft Access</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/202816">Microsoft Excel</a> Primer</li>
+<li><a href="http://hdl.handle.net/2027.42/145724">netCDF</a> Primer and <a href="http://hdl.handle.net/11299/202825">Tutorial using NCAR dataset</a></li>
+<li><a href="http://hdl.handle.net/11299/202812">SPSS</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/211352">STL</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/210209">R</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/210207">Tableau</a> Primer</li>
+<li><a href="http://hdl.handle.net/11299/202811">Wordpress.com</a> Primer</li>
+</ul>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>Tidy Data varies depending on sources and other aspects of inquiry. Tidy Data is not meant to erase or flatten historically complex data, rather it is the process by which this data becomes more usable for investigation and understanding through research.</p>
+</div>
+
+  </article>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="mailto:c19@princeton.edu">Email Us</a>
+        <span>C19 Data Collective &copy; 2023</span>
+      </div>
+    </footer>
+
+    <script defer src="/js/script.js"></script>
+    <script defer src="/js/search.js"></script></body>
+</html>
