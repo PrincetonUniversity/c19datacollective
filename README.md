@@ -33,7 +33,7 @@ $ git clone https://github.com/PrincetonUniversity/c19datacollective.git
 
 ### Generate the Site
 
-This will build and serve the site at `127.0.0.1:1111`:
+This will build and serve the site at `127.0.0.1:1111`: (AKA for MacOS the IP address of "home" for your computer with the modifier of being a private location (only accessible by you))
 
 ```sh
 $ zola serve
@@ -198,3 +198,6 @@ The code in this repository is under [the MIT license](LICENSE). All content tha
 [dataview-impl]: https://github.com/PrincetonUniversity/c19datacollective/blob/main/static/js/dataview.js
 [wiki-slug]: https://en.wikipedia.org/wiki/Clean_URL#Slug
 [zola-gh-action]: https://www.getzola.org/documentation/deployment/github-pages/
+
+## Helpful Resource for Getting Started with GitHub
+If you would like more help on working in GitHub, check out this helpful resource from the Library Carpentries called [Getting Started with Git](https://librarycarpentry.github.io/lc-git/02-getting-started.html)
