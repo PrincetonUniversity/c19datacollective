@@ -2,8 +2,10 @@
 title = "The Personal library and presumed reading of Algernon Charles Swinburne"
 authors = ["John Walsh", "Alexandra Wingate", "Caroline Nurkkala", "Alyssa Ollier","Damien Thomas", "Jennifer Christie", "Evan Brandon"]
 date = 2025-05-13
-description =
-""This data publication is a TEI-encoded bibliography (with links to full-text resources) of the personal library and presumed reading of Victorian poet and critic Algernon Charles Swinburne, as brought together in the Algernon Charles Swinburne project. Further details about the project and data are included in the data essay. "" draft = true
+description = """
+This data publication is a TEI-encoded bibliography (with links to full-text resources) of the personal library and presumed reading of Victorian poet and critic Algernon Charles Swinburne, as brought together in the Algernon Charles Swinburne project. Further details about the project and data are included in the data essay. 
+""" 
+draft = true
 
 [extra]
 doi = "10.34770/rtr7-2035"
@@ -63,7 +65,7 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 > of that corpus and Swinburne's own poetry, looking for similarities
 > and differences, influences, and intertextual connections.
 
-# Creators' Names, Institutions, and Contact Information
+## Creators' Names, Institutions, and Contact Information
 
 - John A. Walsh, Indiana University, <jawalsh@iu.edu>
 
@@ -79,12 +81,12 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 
 - Evan Brandon, Indiana University, <eobrando@iu.edu>
 
-# Funder
+## Funder
 
 > We are grateful for generous funding from the Indiana University
 > Presidential Arts and Humanities Program.
 
-# Date of Creation & Dates of updates
+## Date of Creation & Dates of updates
 
 > The project began in 2019 with the transcription of the Sotheby's
 > sales catalog. In the 2021-2022 academic year, the sales catalog data
@@ -93,7 +95,7 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 > authority control continued throughout leading up to the 1.0 release
 > on 17 March 2025.
 
-# Languages
+## Languages
 
 > Most of the items in the bibliography are English-language texts,
 > although there are a number of items in French, Italian, Greek, Latin,
@@ -138,14 +140,10 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 > libraries and located 16 additional books to add to our dataset.
 > Twenty-seven total items have a note\[@type=\"provenance\"\]
 > indicating the current institution holding them. We will continue to
-> search
->
-> library catalogs for additional copies and update the data set
+> search library catalogs for additional copies and update the data set
 > accordingly. Eight additional items owned by Swinburne have also been
 > identified in the sales catalog of the library of his close friend
-> Theodore
->
-> Watts-Dunton.
+> Theodore Watts-Dunton.
 >
 > For our own research, we are interested not just in the items in
 > Swinburne's library but in other works he may reasonably be presumed
@@ -181,23 +179,16 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 > *Pall Mall* list. However, *Pall Mall* works and those referenced by
 > Swinburne in his poetry can be extracted from across the entire
 > dataset since we respectively have used #top100 and #referenced in the
-> \@corresp of \<biblStruct\> across the entire dataset to flag
->
-> these items.
+> \@corresp of \<biblStruct\> across the entire dataset to flag these items.
 
-# Data Structure
+## Data Structure
 
 > The data consists of a single TEI XML file. Using TEI div (division)
 > element, the file is sub-divided into sections for the sales catalogs
 > (div\[@source = \'sales-catalogue-swinburne\'\] and div\[@source =
 > \'sales-catalogue-watts-dunton\'), the "Best Hundred Books" list
-> (div\[@source =
->
-> \'best-hundred-books\'\]), the citations from the six-volume collected
-> *Poems* (div\[@source =
->
-> \'poems-1904\'\]), and items owned by Swinburne found in our search of
-> library catalogs (div\[@source = \'libraries\'\]).
+> (div\[@source = \'best-hundred-books\'\]), the citations from the six-volume collected
+> *Poems* (div\[@source = \'poems-1904\'\]), and items owned by Swinburne found in our search of library catalogs (div\[@source = \'libraries\'\]).
 >
 > This separation of sources into separate div elements is a practical
 > organizational decision but also supports a variety of research uses
@@ -230,52 +221,58 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 >
 > Below is an example record for a single work, William Michael
 > Rossetti's 1870 edition of Percy Bysshe Shelley's poetry:
->
+
+
 > \<biblStruct corresp=\"#owned\" xml:id=\"sb719.1\"\>
->
-> \<monogr\>
->
-> \<title\>Poetical Works, edited, with Notes and Memoir, by W. M.
+
+>> \<monogr\>
+
+>>>\<title\>Poetical Works, edited, with Notes and Memoir, by W. M.
 > Rossetti\</title\>
+
+>>> \<author corresp=\"#shelley_p\"\>Shelley, P. B.\</author\>
+
+>>> \<note type=\"description\"\>portrait\</note\>
+
+>>> \<imprint\>
+
+>>>> \<date when=\"1870\"/\>
+
+>>> \</imprint\>
+
+>>> \<extent\>
+
+>>>>\<measure unit=\"volumes\" quantity=\"2\"/\>
+
+>>> \</extent\>
+
+>> \</monogr\>
+
+>> \<relatedItem 
+
+>>> n=\"1\"
+>>> type=\"full-text\" 
+>>> corresp=\"#ht\"
+>>> target=\"https://hdl.handle.net/2027/hvd.32044015680069\"/\>
 >
-> \<author corresp=\"#shelley_p\"\>Shelley, P. B.\</author\>
->
-> \<note type=\"description\"\>portrait\</note\>
->
-> \<imprint\>
->
-> \<date when=\"1870\"/\>
->
-> \</imprint\>
->
-> \<extent\>
->
-> \<measure unit=\"volumes\" quantity=\"2\"/\>
->
-> \</extent\>
->
-> \</monogr\>
->
-> \<relatedItem n=\"1\"
->
-> type=\"full-text\" corresp=\"#ht\"
->
-> target=\"https://hdl.handle.net/2027/hvd.32044015680069\"/\>
->
-> \<relatedItem n=\"2\"
->
-> type=\"full-text\" corresp=\"#ht\"
->
-> target=\"https://hdl.handle.net/2027/hvd.32044090294596\"/\>
+>> \<relatedItem 
+
+>>> n=\"2\"
+>>> type=\"full-text\" 
+>>> corresp=\"#ht\"
+>>> target=\"https://hdl.handle.net/2027/hvd.32044090294596\"/\>
 >
 > \</biblStruct\>
->
+
+
+
 > In some cases, the sales catalog has sparse bibliographic detail such
 > that it will not accommodate the more complete \<biblStruct\> element.
 > In such cases we use the more flexible \<bibl\> element.
 >
 > Within the more complex XML structure of the biblStruct or bibl
 > elements, the discrete fields include, when available:
+
 
 +------------------+---------------------------------------------------+
 | > **field**      | > **relative xPath (within biblStruct)**          |
@@ -309,6 +306,7 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 | current          | > biblStruct/note\[@type = \"provenance\"\]       |
 | ownership        |                                                   |
 +------------------+---------------------------------------------------+
+
 
 > Note that, whenever possible, we include links to full-text versions
 > of the works in the data set. Of the 1731 items in the data, 1651
@@ -445,9 +443,9 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 > documented in the project's git repository hosted at
 > https://github.com/jawalsh/swinburne-library.
 
-{% bibliography() %}
 
-# Bibliography
+
+{% bibliography() %}
 
 > Adams, Henry (1918). *The Education of Henry Adams: An Autobiography.*
 > Houghton Mifflin.
@@ -474,14 +472,14 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-rtr7
 
 {% end %}
 
-# Licensing & Rights: Intellectual Property or Licensing rights for the data
+## Licensing & Rights: 
 
 > The Personal library and presumed reading of Algernon Charles
 > Swinburne © 2023 by John A. Walsh, Alexandra Wingate, Caroline
 > Nurkkala, Alyssa Ollier, Damien Thomas, and Jennifer Christie is
 > licensed under CC BY 4.0.
 
-# Data Citation
+## Data Citation
 
 > Walsh, J. A., Wingate, A., Nurkkala, C., Ollier, A., Thomas, D.,
 > Christie, J., & Brandon, E. (2025). *The Personal library and presumed
