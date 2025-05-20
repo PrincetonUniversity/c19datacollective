@@ -1,7 +1,7 @@
 +++
 title = "Moving the Capital of US Literature from Boston to New York: Evidence from 11 million Library of Congress records"
 authors = ["Erik Fredner"]
-date = 2024-11-20
+date = 2025-02-26
 description = """
 Literary historians of the United States broadly agree that, at some
 point during the nineteenth century, New York City overtakes Boston as
