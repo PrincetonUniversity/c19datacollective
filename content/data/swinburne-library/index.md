@@ -5,7 +5,7 @@ date = 2025-05-13
 description = """
 This data publication is a TEI-encoded bibliography (with links to full-text resources) of the personal library and presumed reading of Victorian poet and critic Algernon Charles Swinburne, as brought together in the Algernon Charles Swinburne project. Further details about the project and data are included in the data essay. 
 """ 
-draft = true
+draft = false
 
 [extra]
 doi = "10.34770/rtr7-2035"
