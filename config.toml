@@ -11,7 +11,7 @@ The Nineteenth-Century Data Collective peer-reviews and houses literary or \
 cultural data, circa 1800-1900, on an open-access website."""
 
 [markdown]
-highlight_code = true
+highlighting = true
 smart_punctuation = true
 
 [extra]
