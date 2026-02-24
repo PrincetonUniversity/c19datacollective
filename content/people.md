@@ -28,6 +28,7 @@ disable_toc = true
 - Brian M Ramanis (Oregon State University)
 
 ## Former Managing Editors
+
 - [Alex Diaz-Hui](https://english.princeton.edu/people/alex-diaz-hui) (Princeton University)
 - [Anthie Georgiadi](https://english.princeton.edu/people/anthoula-georgiadi) (Princeton University)
 - [Mi Yu](https://english.princeton.edu/people/mi-yu) (Princeton University)
