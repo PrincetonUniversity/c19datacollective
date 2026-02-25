@@ -35,6 +35,8 @@ $ git clone https://github.com/PrincetonUniversity/c19datacollective.git
 
 This will build and serve the site at `127.0.0.1:1111`: (AKA for MacOS the IP address of "home" for your computer with the modifier of being a private location (only accessible by you))
 
+Note that, as a stop-gap-measure the zola version we are using is slightly old, due to an issue we encountered with v0.22.0. As a workaround our YAML shows the versions of each action we are using to generate pages (in order to update content). In short, current actions are: deploy v0.17.0. checkout is v4. 
+
 ```sh
 $ zola serve
 ```
