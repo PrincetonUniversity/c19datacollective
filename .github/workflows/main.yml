@@ -7,10 +7,11 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: checkout
-        uses: actions/checkout@v0.20.0
+        uses: actions/checkout@v4
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@v0.17.0
         env:
           # Target branch
           PAGES_BRANCH: gh-pages
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ZOLA_VERSION: "0.20.0"
