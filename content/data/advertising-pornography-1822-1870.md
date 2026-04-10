@@ -1,6 +1,6 @@
 +++
 title = "Advertising Pornography, 1822-1870"
-authors = "Sarah Bull"
+authors = ["Sarah Bull"]
 date = "2026-04-10"
 template = "data_section.html"
 page_template = "data_page.html"
