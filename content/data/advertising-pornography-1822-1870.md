@@ -6,6 +6,9 @@ template = "data_section.html"
 page_template = "data_page.html"
 sort_by = "date"
 draft = true
+[extra]
+doi = "10.34770/9xd0-3p75"
+pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-fbhp-c751"
 +++
 
 Dates of Dataset Package Creation: January-May 2025.
