@@ -1,14 +1,14 @@
 +++
 title = "Advertising Pornography, 1822-1870"
 authors = ["Sarah Bull"]
-date = "2026-04-10"
+date = "2026-04-22"
 template = "data_section.html"
 page_template = "data_page.html"
 sort_by = "date"
-draft = true
+draft = false
 [extra]
 doi = "10.34770/9xd0-3p75"
-pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-fbhp-c751"
+pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-9xd0-3p75"
 +++
 
 Dates of Dataset Package Creation: January-May 2025.
