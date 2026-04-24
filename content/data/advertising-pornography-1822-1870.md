@@ -81,21 +81,21 @@ Second, I needed to consider the impact of publishing identifying information. T
 
 See the README for a description of the files.
 
-# Versioning
+## Versioning
 
 Please report any errors to sarah.bull@torontomu.ca. The datasets will be updated with any necessary amendments on GitHub at https://github.com/sarahebull/advertising_pornography_1822_to_1870 up to three times per year.
 
-# Licensing
+## Licensing
 
 This dataset package is published under a [CC-BY](https://creativecommons.org/licenses/by/4.0/) 4.0 license.
 
 The primary sources used to create the datasets in this package were all published before 1871 and are in the public domain. Organizations providing access to the sources were consulted and confirmed that I am free to publish content derived from them in a dataset.
 
-# Acknowledgements
+## Acknowledgements
 
 I am grateful to Rebecca Baumann, Head of Curatorial Services and Curator of Modern Books at the Lilly Library for discussing this project with me over email and sharing her knowledge about the Michael Sadleir Collection of Ephemera. Thanks to Colette Colligan, Kathleen Lubey, and Lisa Z. Sigel for offering advice about how to classify some items.
 
-**Endnotes**
+# Endnotes
 
 [^1]: Iain McCalman, *Radical Underworld: Prophets, Revolutionaries and Pornographers in London, 1795-1840* (Cambridge University Press, 1988), 204-231.
 
