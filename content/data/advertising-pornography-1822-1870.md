@@ -6,9 +6,11 @@ draft = false
 [extra]
 doi = "10.34770/9xd0-3p75"
 pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-9xd0-3p75"
-description = ""Advertising Pornography" is a package of two complementary datasets derived from advertising material issued by major figures in the early Victorian pornography trade, including William Dugdale, Edward Duncombe, John Duncombe, Edward Dyer, and Thomas Paine Carlile. One of the datasets, "Sales Catalogues, 1840-1856", is derived from 16 unique sales catalogues and two duplicates with marginalia, and records more than 1600 items listed for sale. The other dataset, "Periodical Advertising, 1822-1870", is derived from 581 unique periodical advertisements and records more than 5000 items listed for sale."
 +++
 
+Dates of Dataset Package Creation: January-May 2025.
+
+Languages: English and French
 
 *Advertising Pornography* is a package of two complementary datasets derived from advertising material issued by major figures in the early Victorian pornography trade, including William Dugdale, Edward Duncombe, John Duncombe, Edward Dyer, and Thomas Paine Carlile. One of the datasets, *Sales Catalogues, 1840-1856*, is derived from 16 unique sales catalogues and two duplicates with marginalia, and records more than 1600 items listed for sale. The other dataset, *Periodical Advertising, 1822-1870*, is derived from 581 unique periodical advertisements and records more than 5000 items listed for sale. Businesses oriented around trade in sexual material began to emerge in London in the 1820s. Amid the decline of revolutionary politics, a number of radical pressmen shifted their focus to this material, establishing themselves in Holywell Street and other places near London's Strand.[^1] The period between 1840 and 1856 was their heyday, coming after traffic in sexual material crystallized as a specialized sector of the marketplace and before the introduction of mass-market photographs substantially reoriented it.
 
