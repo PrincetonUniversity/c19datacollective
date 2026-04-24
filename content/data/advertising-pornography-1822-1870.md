@@ -7,8 +7,6 @@ draft = false
 doi = "10.34770/9xd0-3p75"
 pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-9xd0-3p75"
 description = ""Advertising Pornography" is a package of two complementary datasets derived from advertising material issued by major figures in the early Victorian pornography trade, including William Dugdale, Edward Duncombe, John Duncombe, Edward Dyer, and Thomas Paine Carlile. One of the datasets, "Sales Catalogues, 1840-1856", is derived from 16 unique sales catalogues and two duplicates with marginalia, and records more than 1600 items listed for sale. The other dataset, "Periodical Advertising, 1822-1870", is derived from 581 unique periodical advertisements and records more than 5000 items listed for sale."
-dates of dataset package creation = "January-May 2025"
-languages = "English and French"
 +++
 
 
