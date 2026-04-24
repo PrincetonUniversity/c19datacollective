@@ -13,7 +13,7 @@ pdc_url = "https://datacommons.princeton.edu/discovery/catalog/doi-10-34770-9xd0
 
 The data's cultural significance extends beyond its relevance to the history of pornography, offering insights into the developments in media culture, popular literature, art, music, and theatre, radical politics, and reproductive health. *Advertising Pornography* illustrates that early Victorian pornographers did not only sell expensive novels, demonstrating the important role that visual material played in the trade and producers' rapid adoption of new visual media technologies. It also illustrates that many of the items sold in the trade were inexpensive, and that a wide variety of items --- including sex toys, condoms, paper dolls, playing cards, tobacco pouches, song and joke books, translations of popular novels, guides to London's night life, and medical works --- were advertised for sale alongside graphically explicit literature and images. The datasets facilitate analyses of inventory, prices, and item descriptions, make relationships between players and their geographic movements more legible, and make it easier to understand what bibliographical studies have captured of this print culture and what they have missed. *Advertising Pornography* also makes it easier to simply explore what kinds of sexually related items were sold during the nineteenth century, and how particular items were priced, described, and distributed in this context.
 
-**Background and Context**
+# Background and Context
 
 Studying the development of pornography and the people who made and sold it requires working with a fragmentary and often untrustworthy historical record.[^2] In nineteenth-century Britain, sellers of sexually explicit literature and images were routinely prosecuted under obscenity laws. These actions produced court, government, and news records that have helped scholars understand how the pornography industry emerged, what early specialists in sexual material sold, and how they operated their businesses. However, they also encouraged producers and distributors to cover their tracks. These figures' routine use of aliases, false imprints and publication dates, and "front men" to move their wares has made establishing exactly who made and sold what when challenging.[^3] The fact that relatively little of the trade's output survives has exacerbated these challenges. Prosecutions increasingly culminated in the mass destruction of stock. Items that survived destruction were rarely preserved for posterity. Some were purchased by wealthy collectors and ended up in research library collections. These collections are priceless resources. However, since they were shaped by collectors' personal interests and networks as well as librarians' judgement about what items were worthy of preservation, they don't offer a reliable index of what was made and sold in the trade.[^4]
 
@@ -21,9 +21,9 @@ Scholars address some of these issues by casting wide nets, piecing pornography'
 
 The datasets also facilitate research by indicating whether each item listed for sale in advertising material is mentioned in bibliographies that historians of English pornography often rely on: Peter Mendes's *Clandestine Erotic Fiction in English, 1800--1930* (1993) and Henry Spencer Ashbee's *Index Librorum Prohibitorum* (1877), *Centuria Librorum Absconditorum* (1879) and *Catena Librorum Tacendorum* (1885).[^6] These bibliographies offer details about some items that are not available in the advertising material. At the same time, the advertising material fills in details about some items unavailable in these bibliographies and helps identify gaps in publication histories they offer. The value of using these sources together is demonstrated to some degree through a supplementary document included with *Sales Catalogues*, *Catalogue Dating and Attribution.* This document explains the working publication dates and attributions that I assigned to each of the catalogues, which are grounded in research that relied partly on data from *Periodical Advertising* and partly on bibliographies*.*
 
-**Collection and Creation**
+# Collection and Creation
 
-<u>Sales Catalogues, 1840-1856</u>
+## Sales Catalogues, 1840-1856
 
 This dataset is derived from eighteen sales catalogues issued by agents associated with the British pornography trade. Fourteen of the catalogues are from the [Michael Sadleir Collection of Ephemera, 1748-1887](https://archives.iu.edu/html/InU-Li-VAE1180.html) at the Lilly Library, Indiana University. Ten of these catalogues are "standalone" catalogues, that is, catalogues issued for distribution on their own, often by mail-order. Two were published in numbers of William Dugdale's periodical *The Exquisite,* and two are bound in books. The rest of the catalogues that inform the dataset are bound in books held at the Kinsey Institute Library and Special Collections, Indiana University (1 catalogue), the Harry Ransom Center (1 catalogue), the Wellcome Library (1 catalogue), and the British Library (1 catalogue). I acquired scans of these catalogues during research for a previous project.
 
@@ -33,7 +33,7 @@ Some of the catalogues are riddled with misspellings and typographical errors. M
 
 In some cases, classifying items listed for sale in the catalogues was challenging. It was impossible to tell whether many items were cheap books or pamphlets, so I ultimately labelled all bookish items "books" in the metadata field focused on physical format.[^7] When classifying items by genre, I followed the way the items were represented in the catalogues. For instance, if an item appears under the header "medical books" in one or more of the catalogues, I categorized it as "medical" even if twenty-first century readers would not necessarily consider it a medical work. This approach resulted in a very broad "literary" genre category, encompassing novels, poetry, biographies, and essays. In a few cases, the catalogues did not give a clear impression of an item's genre, and the item also does not appear to have survived, so I could not rely on my own judgement. In these cases, I designated the genre "unknown." In a few cases, it was hard to tell whether an item listed for sale was a book or a print collection. In those cases, I assigned it with the most likely format label and noted my uncertainty with a question mark or a note attached to the item entry.
 
-<u>Periodical Advertising, 1822-1870</u>
+## Periodical Advertising, 1822-1870
 
 This dataset is derived from 581 periodical advertisements issued between 1822 and 1870 by figures who issued the catalogues in the *Sales Catalogues* dataset, their associates, and their competitors. Except for two advertisements, which appeared in the periodical *Sportsman\'s Magazine of Life in London and the Country* (London: E. Dipple, 1845), which has been digitized by Google, all of the advertisements in this dataset were published in periodicals that have been digitized and made accessible through the *[British Newspaper Archive](https://www.britishnewspaperarchive.co.uk/)* (*BNA*).
 
@@ -43,11 +43,11 @@ I aimed to record one example of every unique advertisement that every agent ass
 
 I took the same approach to spelling and typographical errors and classification when creating this dataset that I used for *Sales Catalogues.* Because the periodical advertisements provide much less information about items listed for sale than the catalogues do, there are more cases in which I was unable to establish the genre of an item, know for sure whether an item was a print collection or a book, or know whether similar titles were variant titles of the same work. As in *Sales Catalogues,* I noted such issues beside the relevant items in the 'notes' field and/or indicated uncertainty with a question mark.
 
-<u>Post-Production Editing</u>
+## Post-Production Editing
 
 After I completed the datasets, I checked metadata fields in each for typos and compared entries in fields with controlled vocabularies to ensure consistent use across the datasets.
 
-**How Researchers Might Use These Datasets**
+## How Researchers Might Use These Datasets
 
 These datasets may prove useful to researchers working in a variety of different areas, including Victorian studies, literary, art, music and theatre history, book history, media studies, the histories of medicine, gender and sexuality, business history, and legal history.
 
@@ -57,7 +57,7 @@ Other researchers may prefer to use the datasets to generate statistical informa
 
 The datasets could also be adapted or used as a basis for other digital projects. Some scholars may wish that they came with different metadata. If this is you, feel free to edit it. Others may be dismayed by the fact that *Periodical Advertising* ends in 1870; require a random sample of advertisements; or want to answer research questions for which information about duplicate advertisements is crucial (see notes on limitations below). If this is you, you could use these datasets as starting points to help you find more advertisements and build a dataset that works for your needs. Finally, the datasets may prove useful in digital humanities teaching. Paring them down (e.g. deleting some metadata columns) may make them more suitable for some teaching applications.
 
-**Limitations**
+# Limitations
 
 *Advertising Pornography* does not offer a complete or unmediated picture of the past. *Sales Catalogues* represents what has survived---and of that, what I have located---of the sales catalogues that agents associated with the early Victorian pornography trade issued. Given the content of their periodical advertisements and findings from prior studies, I believe that the dataset offers quite an accurate illustration of what was made and sold in the trade. However, we don\'t know what was in catalogues that *did not* survive. Several catalogues from the Lilly Library collection also appear to have been annotated by the same person, raising the possibility of bias introduced by a single customer\'s habits.
 
@@ -69,7 +69,7 @@ Some of the information in both datasets is also unreliable because the people w
 
 Finally, it's important to be aware that like many other nineteenth-century book trade workers, pornographers reprinted and reworked a lot of old content. Listings for different editions of the same works are grouped together in the short title fields in both datasets. The material design and content of these editions could be quite different, however. For instance, non-explicit and pornographic editions of *The Confessions of Madame Vestris* were issued during the nineteenth century and appear to have circulated simultaneously.[^14] It's especially important to keep this in mind when looking at listings for titles that were first published before the nineteenth century: a literary work that you know from eighteenth-century print culture may have been edited substantially.[^15]
 
-**Ethical Considerations**
+# Ethical Considerations
 
 Catherine D'Ignazio and Lauren Klein have emphasised that decisions about data collection and presentation are never neutral: they can reflect and reinforce --- or expose and disturb --- structures of power.[^16] Creating these datasets required that I consider two separate issues involving potential harm.
 
@@ -77,21 +77,21 @@ First, I needed to decide whether to include offensive language, which often app
 
 Second, I needed to consider the impact of publishing identifying information. Tara Robertson has written about how digitization can expose living people to serious harm by making evidence of their past involvement in creating sexually explicit material far easier to find than they could have anticipated.[^18] As Colette Colligan has argued, digital tools that identify, or could facilitate the identification of, historical figures involved in making and selling sexual material may also lead to the \'unmasking\' of figures who would not have wanted their involvement known.[^19] However, discovery was a risk of advertising that the people whose activities are documented in these datasets would have knowingly assumed: state authorities and anti-vice groups cited advertising material in obscenity trials and did not hide their use of this material in their own investigations.[^20] The youngest of these people also died more than a century ago. For these reasons, I'm comfortable with publishing the datasets.
 
-**Description**
+# Description
 
 See the README for a description of the files.
 
-**Versioning**
+# Versioning
 
 Please report any errors to sarah.bull@torontomu.ca. The datasets will be updated with any necessary amendments on GitHub at https://github.com/sarahebull/advertising_pornography_1822_to_1870 up to three times per year.
 
-**Licensing**
+# Licensing
 
 This dataset package is published under a [CC-BY](https://creativecommons.org/licenses/by/4.0/) 4.0 license.
 
 The primary sources used to create the datasets in this package were all published before 1871 and are in the public domain. Organizations providing access to the sources were consulted and confirmed that I am free to publish content derived from them in a dataset.
 
-**Acknowledgements**
+# Acknowledgements
 
 I am grateful to Rebecca Baumann, Head of Curatorial Services and Curator of Modern Books at the Lilly Library for discussing this project with me over email and sharing her knowledge about the Michael Sadleir Collection of Ephemera. Thanks to Colette Colligan, Kathleen Lubey, and Lisa Z. Sigel for offering advice about how to classify some items.
 
