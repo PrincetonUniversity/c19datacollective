@@ -93,7 +93,7 @@ The primary sources used to create the datasets in this package were all publish
 
 ## Acknowledgements
 
-I am grateful to Rebecca Baumann, Head of Curatorial Services and Curator of Modern Books at the Lilly Library for discussing this project with me over email and sharing her knowledge about the Michael Sadleir Collection of Ephemera. Thanks to Colette Colligan, Kathleen Lubey, and Lisa Z. Sigel for offering advice about how to classify some items.
+I am grateful to Rebecca Baumann, Head of Curatorial Services and Curator of Modern Books at the Lilly Library for discussing this project with me over email and sharing their knowledge about the Michael Sadleir Collection of Ephemera. Thanks to Colette Colligan, Kathleen Lubey, and Lisa Z. Sigel for offering advice about how to classify some items.
 
 # Endnotes
 
