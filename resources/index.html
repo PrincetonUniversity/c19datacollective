@@ -1,0 +1,612 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" /><title>Resources | Nineteenth-Century Data Collective</title>
+    <meta name="author" content="C19 Data Collective" />
+    <meta name="description" content="The Nineteenth-Century Data Collective peer-reviews and houses literary or cultural data, circa 1800-1900, on an open-access website." />
+
+    <script async src="/elasticlunr.min.js"></script>
+    <script async src="/search_index.en.js"></script>
+  </head>
+
+  <body>
+    <header id="menu">
+  <div class="menu-inner">
+    <a id="menu-title" href="/">C19 Data Collective</a>
+    <input id="menu-toggle-button" type="checkbox" />
+    <label id="menu-toggle-label" for="menu-toggle-button">Menu</label>
+    <ul id="menu-items">
+      <li><a href="/submit">Submission</a></li>
+      <li><a href="/criteria">Criteria</a></li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/data">Our Data</a></li>
+      <li><a href="/people">People</a></li>
+      <li><button popovertarget="search-dialog">Search</button></li>
+    </ul>
+  </div>
+</header>
+
+<dialog popover id="search-dialog">
+  <div id="search-dialog-inner">
+    <input
+      id="search-bar"
+      type="search"
+      placeholder="What are you looking for?"
+    />
+    <div id="search-results"><p>No results found.</p></div>
+    <button popovertarget="search-dialog">Close</button>
+  </div>
+</dialog>
+
+
+    
+
+    <main class="
+  
+  
+    has-toc
+  
+">
+      
+  
+  <h1>Resources</h1>
+  
+    
+
+
+
+
+<nav class="toc toc-show">
+  <h2>Table of Contents</h2>
+  <ul>
+    
+      <li>
+        <a href="#tools">Tools</a>
+        
+          <ul>
+            
+              <li>
+                <a href="#data-cleaning-editing">Data Cleaning &#x2F; Editing</a>
+              </li>
+            
+              <li>
+                <a href="#databases">Databases</a>
+              </li>
+            
+              <li>
+                <a href="#repositories">Repositories</a>
+              </li>
+            
+              <li>
+                <a href="#project-management-platforms">Project Management Platforms</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="#tutorials">Tutorials</a>
+        
+      </li>
+    
+      <li>
+        <a href="#methods-best-practices">Methods &amp; Best Practices</a>
+        
+      </li>
+    
+      <li>
+        <a href="#example-datasets">Example Datasets</a>
+        
+      </li>
+    
+      <li>
+        <a href="#further-readings">Further Readings</a>
+        
+          <ul>
+            
+              <li>
+                <a href="#data-method">Data &amp; Method</a>
+              </li>
+            
+              <li>
+                <a href="#data-cleaning">Data Cleaning</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+  
+
+  <a href="#" class="back-to-top" onclick="document.documentElement.scrollTop = 0;"> Back to Top</a>
+</nav>
+
+<script defer src="/js/toc.js"></script>
+
+  
+  <article>
+    <h2 id="tools">Tools</h2>
+<h3 id="data-cleaning-editing">Data Cleaning / Editing</h3>
+<ul>
+<li>Systematic interpretation
+<ul>
+<li>Humanities-oriented tools
+<ul>
+<li><a href="https://tei-c.org/guidelines/">TEI</a></li>
+<li><a href="https://tropy.org/">Tropy</a></li>
+<li><a href="https://recogito.pelagios.org/">Recogito</a>
+<ul>
+<li>collaborative data annotation platform for text and
+images</li>
+<li>includes syntax for places, people, events</li>
+<li>multiple export formats</li>
+<li>runs auto Named-Entity Recognition</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>General tools
+<ul>
+<li><a href="https://www.airtable.com/product">Airtable</a></li>
+<li>Google Sheets/Forms</li>
+<li><a href="https://atom.io/">Atom</a>
+<ul>
+<li>free and open-source text and code editor</li>
+<li>powerful search across files</li>
+<li>supports regular expressions</li>
+<li>robust community of developers who contribute “packages”
+that extend Atom’s functionality, including data
+transforms, specialized syntax highlighting, easy GitHub
+integration, etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Qualitative analysis tools:
+<a href="https://www.qsrinternational.com/nvivo-qualitative-data-analysis-software/about/nvivo">NVivo</a>,
+<a href="https://atlasti.com/product/what-is-atlas-ti/">ATLAS.ti</a>,
+<a href="https://www.maxqda.com/why-maxqda">MAXQDA</a></li>
+</ul>
+</li>
+<li>Semi-automated cleaning tools
+<ul>
+<li><a href="https://openrefine.org/">OpenRefine</a>
+<ul>
+<li>power tool for cleaning tabular data and some XML</li>
+<li>supports regular expressions</li>
+</ul>
+</li>
+<li><a href="https://tidyr.tidyverse.org/articles/tidy-data.html">tidyr</a>
+(part of the
+<a href="https://www.tidyverse.org/">tidyverse</a> suite of
+tools for R)</li>
+<li><a href="https://hdlab.stanford.edu/breve/">Breve</a>
+<ul>
+<li>web based visual tool for seeing data errors in tabular data</li>
+<li>NEH-funded project under development at Stanford’s Center
+for Spatial and Textual Analysis</li>
+</ul>
+</li>
+<li><a href="https://www.databasic.io/wtfcsv">WTFcsv</a>
+<ul>
+<li>web based visual tool for a quick snapshot of the data in a
+csv file</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>String pattern manipulation
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Regular_expression">Regular expressions</a>
+<ul>
+<li><a href="https://regex101.com/">RegEx 101</a> tool</li>
+<li><em>Programming Historian</em> <a href="https://programminghistorian.org/en/lessons/understanding-regular-expressions">introduction to regular expressions</a></li>
+</ul>
+</li>
+<li><a href="https://stringr.tidyverse.org/">stringr</a> (also
+part of the tidyverse)</li>
+</ul>
+</li>
+</ul>
+<h3 id="databases">Databases</h3>
+<ul>
+<li><a href="https://airtable.com/">Airtable</a>: collaborative
+database platform
+<ul>
+<li>allows you to embed a browsable copy of your database in a webpage</li>
+<li>super user friendly, with tutorials that explain features like pivot tables</li>
+<li>free account allows for 2GB server space and revision history 2 weeks old, but further features cost $$</li>
+</ul>
+</li>
+<li><a href="https://mukurtu.org/about/">Mukurtu</a>: content management system supporting Indigenous knowledge systems and values
+<ul>
+<li>grassroots platform currently used by six hundred different
+groups to “curate their own Web sites and regulate access in
+accordance with custom”</li>
+<li>multiple records can be generated for single digital heritage
+items, allowing for overlapping cultural narratives</li>
+<li>“There is rarely just one story, one set of information, or one
+way of knowing cultural heritage materials.”</li>
+</ul>
+</li>
+<li><a href="https://omeka.org/">Omeka</a>: open-source web
+publishing platforms for sharing digital collections and creating
+media-rich online exhibits.
+<ul>
+<li>designed by the Roy Rosenzweig Center for History and New Media
+at George Mason University, who developed Zotero</li>
+<li>a go-to choice for many digital humanists and museums looking
+for a user-friendly, sustainable system for creating online
+collections/exhibits</li>
+</ul>
+</li>
+</ul>
+<h3 id="repositories">Repositories</h3>
+<h4 id="discipline-specific-repositories">Discipline-specific repositories</h4>
+<ul>
+<li>Tighter communities with richer standards</li>
+<li>May have more restrictions, and perhaps a cost</li>
+<li>Example: <a href="https://hcommons.org/core/">Humanities Commons CORE</a></li>
+</ul>
+<h4 id="generalist-repositories">Generalist repositories</h4>
+<ul>
+<li>Loose communities with boilerplate standards</li>
+<li>Often unmediated (fast, but no quality assurance)</li>
+<li>Example: <a href="https://zenodo.org/">Zenodo</a>, open access repository maintained by CERN
+<ul>
+<li>automatically assigns DOI’s to all files</li>
+<li>If you publish software or data in Github, you can <a href="http://libguides.mit.edu/c.php?g=551454&amp;p=3786120#s-lg-box-wrapper-14235641">create a citable archived version</a>
+whenever you choose through Zenodo
+<ul>
+<li>This feature used by CDH for:</li>
+<li>Derrida’s Margins codebase:
+<a href="https://doi.org/10.5281/zenodo.1453447">https://doi.org/10.5281/zenodo.1453447</a></li>
+<li>PPA codebase
+<a href="https://doi.org/10.5281/zenodo.2400705">https://doi.org/10.5281/zenodo.2400705</a></li>
+</ul>
+</li>
+<li>possible to sign up directly through your GitHub account</li>
+<li>because Zenodo accepts image / video / PDF files in addition to
+numerical / tabular / textual data, many scholars use Zenodo as
+an alternative to the for-profit academia.edu when sharing
+copies of their articles or creating public research profiles:
+many metadata categories available for journal name, pages, etc.
+that Figshare and Dataverse don’t have</li>
+<li>Social collections: tag datasets with “community collections,”
+curated by individual Zenodo users. Example: a collection of
+datasets, papers, presentations and source code on <a href="https://zenodo.org/communities/dighl/?page=1&amp;size=20">Digital Historical Linguistics</a>
+created by one user</li>
+<li>“your research output is stored safely for the future in the
+same cloud infrastructure as CERN’s own LHC research data.”</li>
+<li>50GB per dataset limit</li>
+</ul>
+</li>
+<li>Example: <a href="https://dataverse.org/">Dataverse</a>, open
+access repository hosted by Harvard Institute for Quantitative
+Social Studies (IQSS)
+<ul>
+<li>A “dataverse” is a container for all your datasets, files, and
+metadata.</li>
+<li>Tag datasets with pre-set categories, less than are available on
+Figshare</li>
+<li>Allows user to customize the look of their &quot;Dataverse&quot; or
+collection</li>
+<li>Allows for tiered access</li>
+<li>Includes some integrated data analysis tools, and a useful “data
+explorer” web interface that lists the variables in a tabular
+data file and allows users to search, chart, and conduct cross
+tabulation analysis</li>
+<li>Used by <em>Cultural Analytics</em> journal</li>
+<li>2.5 GB per file, 10 GB per dataset limit</li>
+</ul>
+</li>
+</ul>
+<h4 id="institutional-repositories">Institutional repositories</h4>
+<ul>
+<li>Often curated, and can accept many sizes and types of data</li>
+<li>Restricted to affiliates, but open to all disciplines</li>
+<li>Example: Princeton University’s institutional data repository,
+<a href="https://datacommons.princeton.edu/discovery/">Princeton Data Commons</a>
+<ul>
+<li>assigns DOIs to datasets</li>
+<li>offers data curation advice and assistance on deposits, with
+focus on metadata and tagging for preservation and discovery,
+and open formats for re-use</li>
+<li>accepts all forms of research data (including research code)</li>
+<li>has community approach, with upcoming DH community</li>
+<li>infrastructure supported by library expertise in long-term
+digital preservation and archival practice</li>
+</ul>
+</li>
+</ul>
+<h4 id="further-comparisons-of-repository-features-compiled-by">Further comparisons of repository features compiled by:</h4>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1_VbZsxYeov1Z19Cf5CkwToDW1WpWLLCS9ZKG7aCmJGc/edit?usp=sharing">Harvard Medical School</a></li>
+<li><a href="https://dataverse.org/blog/comparative-review-various-data-repositories">Dataverse</a></li>
+</ul>
+<h3 id="project-management-platforms">Project Management Platforms</h3>
+<ul>
+<li><a href="https://asana.com/">Asana</a>
+<ul>
+<li>online project management platform with shared to-do lists</li>
+</ul>
+</li>
+<li><a href="https://trello.com/en">Trello</a>
+<ul>
+<li>team communications app in a message board format</li>
+</ul>
+</li>
+<li><a href="https://slack.com/">Slack</a>
+<ul>
+<li>group communications with topic-based channels</li>
+</ul>
+</li>
+</ul>
+<h2 id="tutorials">Tutorials</h2>
+<p><a href="https://programminghistorian.org/en/lessons/cleaning-data-with-openrefine">“Cleaning Data with Open Refine,”</a> <em>The Programming Historian</em></p>
+<p><a href="https://datacarpentry.org/OpenRefine-ecology-lesson/01-working-with-openrefine/">“Cleaning Data with OpenRefine for Ecologists”</a>
+and <a href="https://datacarpentry.org/openrefine-socialsci/">“OpenRefine for Social Science Data”</a>,
+<em>Data Carpentry: Building Communities Teaching Universal Data Literacy</em></p>
+<p><a href="http://humanidadesdigitales.net/evaluacion/eng/">Checklist for Digital Humanities Projects</a>,
+La Red de Humanidades Digitales (RedHD), English and Spanish versions
+available</p>
+<p><a href="https://programminghistorian.org/en/lessons/preserving-your-research-data">Programming Historian: Preserving Your Research Data</a>:
+“This lesson will suggest ways in which historians can document and
+structure their research data so as to ensure it remains useful in the
+future.”</p>
+<p><a href="https://librarycarpentry.org/lc-spreadsheets/">Library Carpentry: Tidy Data for Librarians</a></p>
+<p><a href="https://librarycarpentry.org/lc-open-refine/">Library Carpentry: OpenRefine</a></p>
+<p><a href="https://librarycarpentry.org/Top-10-FAIR/">Library Carpentry: Top 10 FAIR Data &amp; Software Things</a>, a list of field-specific FAIR principles/techniques</p>
+<p><a href="https://fjday.com/projects">Black Living Data Booklet</a> section on &quot;3 Steps to Download and Decode Data&quot;
+<a href="https://static1.squarespace.com/static/5f402e034b33c773cedbd428/t/5f5578b66699dc5f7fd72ef6/1599437000245/THE+BLD+Booklet+%284%29.pdf">PDF</a></p>
+<p><a href="https://curriculum.dhinstitutes.org/workshops/data-literacies/">Data Literacies: DH Institutes</a>
+on tidy data, CSV, stages of data analysis, etc.</p>
+<p>NEH’s Office of Digital Humanities <a href="https://www.neh.gov/sites/default/files/2018-06/data_management_plans_2018.pdf">Guide to Data Management Plans</a></p>
+<h2 id="methods-best-practices">Methods &amp; Best Practices</h2>
+<ul>
+<li>Arts &amp; Humanities <a href="https://rd-alliance.github.io/metadata-directory/standards/">Standards Directory from the Research Data Alliance</a></li>
+<li>Frictionless Data
+<ul>
+<li>an <a href="https://frictionlessdata.io/introduction/">open-source framework to reduce friction</a>
+in data workflows</li>
+<li><a href="https://frictionlessdata.io/standards/">multiple standards</a>
+developing for data scientists and researchers</li>
+</ul>
+</li>
+<li><a href="https://qdr.syr.edu/ati">Annotation for Transparent Inquiry (ATI)</a></li>
+<li><a href="http://doi.org/10.5334/dsj-2020-043">The CARE Principles for Indigenous Data Governance</a>
+<ul>
+<li>Complementing the FAIR Principles</li>
+<li>Emphasizing <strong>C</strong>ollective benefit, <strong>A</strong>uthority to control,
+<strong>R</strong>esponsibility, and <strong>E</strong>thics</li>
+</ul>
+</li>
+<li><a href="https://localcontexts.org/labels/traditional-knowledge-labels/">Traditional Knowledge Labels</a>
+<ul>
+<li>Complementing licenses and permissions for use</li>
+<li>Emphasizing relationships and engagement with Indigenous communities</li>
+</ul>
+</li>
+<li><a href="http://guide.dhcuration.org/">DH Curation Guide</a>
+<ul>
+<li>Asks, “How do we align the care for digital materials with the methods/goals of traditional humanities disciplines?”</li>
+<li>Introductory essays on different aspects of data curation in digital humanities, with links to relevant readings</li>
+<li>produced by NEH-funded workshops in 2014 at Maryland Institute
+for Technology in the Humanities and University of Illinois
+Center for Informatics Research in Science and Scholarship</li>
+</ul>
+</li>
+<li>UCLA Library: <a href="http://guides.library.ucla.edu/data-management-humanities">Data Management for the Humanities</a>
+<ul>
+<li>extensive research guide</li>
+</ul>
+</li>
+<li><a href="https://scholarblogs.emory.edu/pm4dh/">PM4DH | Project Management for the Digital Humanities</a>
+<ul>
+<li>developed by Emory Center for Digital Scholarship</li>
+<li>“curriculum for managing digital projects in academic libraries
+and other settings”</li>
+</ul>
+</li>
+<li><a href="https://datanutrition.org/">Data Nutrition Project</a>
+<ul>
+<li>“nutrition labels” graphically designed to resemble those on food packaging</li>
+<li>still in prototype stages</li>
+<li>“aims to create a standard for interrogating datasets for
+measures that will ultimately drive the creation of better, more
+inclusive machine learning models”</li>
+<li>“aims to highlight the key ingredients in a dataset such as
+meta-data and populations, as well as unique or anomalous
+features regarding distributions, missing data, and comparisons
+to other ‘ground truth’ datasets.”</li>
+</ul>
+</li>
+<li><a href="https://archive.mith.umd.edu/dhcuration-guide/guide.dhcuration.org/">Digital Humanities Data Curation Guide (UMD)</a></li>
+<li><a href="http://has.dariah.eu/?page_id=688">Resources from Humanities at Scale (DARIAH)</a></li>
+<li><a href="http://www.data-archive.ac.uk/media/2894/managingsharing.pdf">Managing and Sharing Data: Best Practices for Researchers</a>
+[PDF]
+<ul>
+<li>Created by the UK Data Archive, “the UK’s largest collection of
+digital research data in the social sciences and humanities.”</li>
+<li>produced in 2011, a slightly outdated but thorough rundown of
+best practices for sharing, management, documenting, formatting,
+storing, and ethics</li>
+</ul>
+</li>
+<li>Kristin Briney, <em>Data Management for Researchers: Organize, Maintain
+and Share Your Data for Research Success</em> (Exeter, UK: Pelagic
+Publishing, 2015).</li>
+<li><a href="https://researchdata.princeton.edu/research-lifecycle-guide/acquisition/metadata">PRDS Guide on Data Documentation</a></li>
+<li><a href="https://data.research.cornell.edu/content/readme">README Guide from Cornell’s Research Data Management Service</a></li>
+<li><a href="https://docs.google.com/document/d/1_CE7PHV5ghC3_69vUYc2a_YLu_D0lb01tzaL-B26TbA/edit#heading=h.mrx5te9hkkzy">Data Paper Template from Princeton’s Center for Digital Humanities</a></li>
+<li><a href="https://datadryad.org/stash/best_practices#describe">Best Practices for Data Description from DRYAD</a></li>
+<li><a href="https://www.icpsr.umich.edu/files/deposit/Guide-to-Codebooks_v1.pdf">ICPSR Guide to Codebooks</a></li>
+<li><a href="https://managing-qualitative-data.org/modules/2/a/">“Managing Qualitative Data” Module on Documentation</a></li>
+<li><a href="https://help.osf.io/hc/en-us/articles/360019739054-How-to-Make-a-Data-Dictionary">Open Science Framework How-To for Data Dictionaries</a></li>
+<li>Gebru, et al. 2021. “Datasheets for Datasets.” <a href="https://doi.org/10.1145/3458723">DOI: 10.1145/3458723</a>.</li>
+<li>Mitchell, et al. 2019. “Model Cards for Model Reporting.” <a href="https://doi.org/10.1145/3287560.3287596">DOI: 10.1145/3287560.3287596</a>.</li>
+</ul>
+<h2 id="example-datasets">Example Datasets</h2>
+<ul>
+<li>
+<p>browse projects featured in <a href="https://openhumanitiesdata.metajnl.com/"><em>Journal of Open Humanities Data</em></a></p>
+<ul>
+<li>“features peer reviewed publications describing humanities data
+or techniques with high potential for reuse”</li>
+</ul>
+</li>
+<li>
+<p>Our extensive, curated list, organized by field and topic, available at: <a href="https://cdh.princeton.edu/research/resources/humanities-datasets/">https://cdh.princeton.edu/research/resources/humanities-datasets/</a></p>
+</li>
+<li>
+<p><a href="https://katherinebode.wordpress.com/projects/to-be-continued/">To Be Continued…</a></p>
+<ul>
+<li>developed by Katherine Bode alongside her book <em>A World of
+Fiction: Digital Collections and the Future of Literary History</em>
+(2018)</li>
+<li>identified and analyzed fiction over 21,000 novels, novellas and
+short stories in 19th- and early 20th-century Australian
+newspapers.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.datarefuge.org/">Data Refuge</a></p>
+<ul>
+<li>“a community-driven, collaborative project to preserve public climate and environmental data”</li>
+<li>currently building a “Storybank”, or map of data use cases and “life stories”</li>
+<li>includes a number of toolkits for the rescue and protection of public data</li>
+<li>spearheaded by UPenn’s Program in Environmental History Lab</li>
+</ul>
+</li>
+<li>
+<p><a href="https://openhumanitiesdata.metajnl.com/articles/10.5334/johd.7/">Early African American Film</a></p>
+<ul>
+<li>wonderful example of thorough documentation</li>
+<li>networks of producers/actors/directors in early twentieth
+century “race film”</li>
+</ul>
+</li>
+<li>
+<p><a href="https://collectionsasdata.github.io/part2whole/cohort1">Collections as Data: Part to Whole</a></p>
+<ul>
+<li>UNLV / University of Iowa / U Penn led Mellon grant, supports a number of project applicants</li>
+<li>“Collections as data produced by project activity will exhibit
+high research value, demonstrate the capacity to serve
+underrepresented communities, represent a diversity of content
+types, languages, and descriptive practices, and arise from a
+range of institutional contexts.”</li>
+</ul>
+</li>
+<li>
+<p>NYPL’s <a href="http://menus.nypl.org/">“What’s on the Menu?”</a></p>
+<ul>
+<li>crowdsourced project that has garnered lots of public interest</li>
+<li>interesting method of organically generating their data model</li>
+</ul>
+</li>
+<li>
+<p><a href="https://dataverse.tdl.org/dataset.xhtml?persistentId=doi:10.18738/T8/5TBANV">Black Anthology Project</a></p>
+<ul>
+<li>“information related to over 600 African American short stories
+that appeared in 100 African American and American anthologies
+published between 1925 and 2017.”</li>
+<li>tabular data on underrepresented authors and circulation
+histories</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.bl.uk/subjects/digital-scholarship">British Library Digital Scholarship</a></p>
+<ul>
+<li>Extensive resource featuring digital collections and datasets
+drawn from the British Library collections, including digitized
+printed books, datasets for image analysis, datasets about the
+BL collections, datasets for content mining, digital mapping,
+and an archive of UK web content.</li>
+<li>Example: <a href="https://data.bl.uk/cmtaylorkeylogging/">CM Taylor Keylogging Data</a> from
+the author C M Taylor captured between 17 October 2014 to 5
+March 2018, during the writing of the novel <em>Staying On</em>, 2018</li>
+</ul>
+</li>
+<li>
+<p><a href="https://topostext.org/index.php">ToposText</a></p>
+<ul>
+<li>“an indexed collection of ancient texts and mapped places
+relevant the the history and mythology of the ancient Greeks
+from the Neolithic period up through the 2nd century CE”</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.quillproject.net/">Quill Project</a></p>
+<ul>
+<li>marking up “negotiated texts” written/decided by committee:
+constitutions, legislative proceedings, statements, etc.</li>
+<li>“legibility to the general public only of secondary concern” –
+an archive primarily for scholars</li>
+<li>example:
+<a href="https://www.quillproject.net/event_visualize/493">https://www.quillproject.net/event_visualize/493</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="further-readings">Further Readings</h2>
+<h3 id="data-method">Data &amp; Method</h3>
+<p>Tanya E. Clement, <a href="http://dhdebates.gc.cuny.edu/debates/text/65">“Where Is Methodology in Digital Humanities?”</a>,
+<em>Debates in the Digital Humanities 2016</em></p>
+<p>Ryan Cordell, “<a href="https://ryancordell.org/research/teachingHDA/">Teaching Humanistic Data Analysis</a>”
+(2019)</p>
+<p>Luke Stark and Anna Lauren Hoffmann, “<a href="https://culturalanalytics.org/2019/05/data-is-the-new-what-popular-metaphors-professional-ethics-in-emerging-data-culture-2/">Data Is the New What? Popular Metaphors &amp; Professional Ethics in Emerging Data Culture,</a>”
+<em>Cultural Analytics</em> (2019)</p>
+<p>Daniel Rosenberg, <a href="http://static1.1.sqspcdn.com/static/f/1133095/23310656/1376447540493/Rosenburg_RawData.pdf">“Data Before the Fact,”</a>
+in <em>“Raw Data” Is an Oxymoron,</em> ed. Lisa Gitelman (MIT Press, 2013)</p>
+<p>Johanna Drucker, <a href="http://dh101.humanities.ucla.edu/?page_id=20">“HTML and Structured Data”</a> (2013)</p>
+<p>Michael Hancher, <a href="http://dhdebates.gc.cuny.edu/debates/text/63">“Re: Search and Close Reading,”</a>
+<em>Debates in the Digital Humanities 2016</em></p>
+<p>Ricardo L. Punzalan, Diana E. Marsh, Kyla Cools, <a href="https://archivaria.ca/index.php/archivaria/article/view/13614">“Beyond Clicks, Likes, and Downloads: Identifying Meaningful Impacts for Digitized Ethnographic Archives,”</a>
+<em>Archivaria</em> 84 (Fall 2017)</p>
+<p>Klein, Lauren F. “The Image of Absence: Archival Silence, Data Visualization, and James Hemings.” American Literature 1 December 2013; 85 (4):
+661–688. <a href="https://doi.org/10.1215/00029831-2367310">https://doi.org/10.1215/00029831-2367310</a>.</p>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p>Katie Rawson &amp; Trevor Muñoz, <a href="http://curatingmenus.org/articles/against-cleaning/">“Against Cleaning”</a> (2016)</p>
+<p>Mia Ridge, <a href="https://labs.cooperhewitt.org/2012/exploring-shape-collections-draft/">“Mia Ridge explores the shape of Cooper-Hewitt collections”</a>, <em>Cooper-Hewitt Labs</em> (2012)</p>
+<p>Lauren F. Klein, <a href="https://doi.org/10.1215/00029831-2367310">“The Image of Absence: Archival Silence, Data Visualization, and James Hemings,”</a> <em>American Literature</em> 85, no. 4 (2013)</p>
+<p>Garfinkel, Simson L. “De-Identification of Personal Information.” National Institute of Standards and Technology NISTIR 8053, October 2015. <a href="http://dx.doi.org/10.6028/NIST.IR.8053">http://dx.doi.org/10.6028/NIST.IR.8053</a>.</p>
+<p>Lincoln, Matthew D. “Tidy Data for the Humanities.” Matthew Lincoln, PhD (blog), 26 May 2020, <a href="https://matthewlincoln.net/2020/05/26/tidy-data-for-humanities.html">https://matthewlincoln.net/2020/05/26/tidy-data-for-humanities.html</a>. (Accessed January 31, 2022.)</p>
+<p>Sperberg-McQueen, C.M. and David Dubin. “Data Representation.” DH Curation Guide, (no date) <a href="https://archive.mith.umd.edu/dhcuration-guide/guide.dhcuration.org/index.html%3Fp=63.html">https://archive.mith.umd.edu/dhcuration-guide/guide.dhcuration.org/index.html%3Fp=63.html</a>
+(Accessed January 31, 2022.)</p>
+<p>Wickham, Hadley. “Tidy Data.” Journal of Statistical Software 2014; 49 (10): 1-23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>.</p>
+<p>Babau, Alison. “Classics, ‘Digital Classics’ and Issues for Data Curation.” DH Curation Guide, (no date) <a href="https://archive.mith.umd.edu/dhcuration-guide/humanitiesdatacurationguide.wordpress.com/contents/classics-digital-classics-and-issues-for-data-curation/index.html">https://archive.mith.umd.edu/dhcuration-guide/humanitiesdatacurationguide.wordpress.com/contents/classics-digital-classics-and-issues-for-data-curation/index.html</a> (Accessed February 14, 2022)</p>
+<p>Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. “Datasheets for Datasets.” Communications of the ACM 64(12): pp. 86-92, 2021. <a href="https://doi.org/10.1145/3458723">https://doi.org/10.1145/3458723</a></p>
+<p>Levine, Melissa. “Policy, Practice, and Law.” DH Curation Guide, (no
+date) <a href="https://archive.mith.umd.edu/dhcuration-guide/guide.dhcuration.org/legal/policy.html">https://archive.mith.umd.edu/dhcuration-guide/guide.dhcuration.org/legal/policy.html</a> (Accessed February 14, 2022)</p>
+<p>Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy
+Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and
+Timnit Gebru. “Model Cards for Model Reporting.” FAT* ’19: Proceedings
+of the Conference on Fairness, Accountability, and Transparency: pp.
+220-229, 2019.
+<a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a></p>
+<p>Van den Eynden, Veerle, Louise Corti, Matthew Woollard, Libby Bishop,
+and Laurence Horton. “Managing and Sharing Data: Best Practices for
+Researchers.” 3rd Ed. Essex: UK Data Archive, 2011.
+<a href="https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf">https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf</a>
+(Accessed February 28, 2022)</p>
+
+  </article>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="mailto:c19@princeton.edu">Email Us</a>
+        <span>C19 Data Collective &copy; 2023</span>
+      </div>
+    </footer>
+
+    <script defer src="/js/script.js"></script>
+    <script defer src="/js/search.js"></script></body>
+</html>

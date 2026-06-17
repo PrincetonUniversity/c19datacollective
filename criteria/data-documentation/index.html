@@ -1,0 +1,209 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" /><title>Data Documentation | Nineteenth-Century Data Collective</title>
+    <meta name="author" content="C19 Data Collective" />
+    <meta name="description" content="The Nineteenth-Century Data Collective peer-reviews and houses literary or cultural data, circa 1800-1900, on an open-access website." />
+
+    <script async src="/elasticlunr.min.js"></script>
+    <script async src="/search_index.en.js"></script>
+  </head>
+
+  <body>
+    <header id="menu">
+  <div class="menu-inner">
+    <a id="menu-title" href="/">C19 Data Collective</a>
+    <input id="menu-toggle-button" type="checkbox" />
+    <label id="menu-toggle-label" for="menu-toggle-button">Menu</label>
+    <ul id="menu-items">
+      <li><a href="/submit">Submission</a></li>
+      <li><a href="/criteria">Criteria</a></li>
+      <li><a href="/resources">Resources</a></li>
+      <li><a href="/data">Our Data</a></li>
+      <li><a href="/people">People</a></li>
+      <li><button popovertarget="search-dialog">Search</button></li>
+    </ul>
+  </div>
+</header>
+
+<dialog popover id="search-dialog">
+  <div id="search-dialog-inner">
+    <input
+      id="search-bar"
+      type="search"
+      placeholder="What are you looking for?"
+    />
+    <div id="search-results"><p>No results found.</p></div>
+    <button popovertarget="search-dialog">Close</button>
+  </div>
+</dialog>
+
+
+    
+
+    <main class="
+  
+  
+    has-toc
+  
+">
+      
+  
+  <h1>Data Documentation</h1>
+  
+    
+
+
+
+  
+  
+
+
+<nav class="toc toc-show">
+  <h2>Table of Contents</h2>
+  <ul>
+    
+      <li>
+        <a href="#key-ethical-considerations">Key Ethical Considerations</a>
+        
+      </li>
+    
+      <li>
+        <a href="#essential-tasks">Essential Tasks</a>
+        
+          <ul>
+            
+              <li>
+                <a href="#a-readme-file">A README file</a>
+              </li>
+            
+              <li>
+                <a href="#file-and-folder-names">File and Folder Names</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+
+  
+    <h3><a href="/criteria/">Also in Criteria</a></h3>
+    <ul>
+      
+        
+          <li><a href="/criteria/dataset-preparation/">Dataset Preparation</a></li>
+        
+      
+        
+      
+        
+          <li><a href="/criteria/data-essay/">Data Essay Criteria</a></li>
+        
+      
+        
+          <li><a href="/criteria/metadata/">Metadata</a></li>
+        
+      
+    </ul>
+  
+
+  <a href="#" class="back-to-top" onclick="document.documentElement.scrollTop = 0;"> Back to Top</a>
+</nav>
+
+<script defer src="/js/toc.js"></script>
+
+  
+  <article>
+    <p>Examine the dataset closely to understand what it is, how the files interrelate, and what information is needed to reuse.</p>
+<ul>
+<li>Check for quality assurance and usability issues such as missing data, ambiguous headings, code execution failures, and data presentation concerns</li>
+<li>Try to detect and extract any “hidden documentation” inherent to the data files that may facilitate reuse or expose unintended information</li>
+<li>Determine if the documentation of the data is sufficient for a user with similar qualifications to the researcher’s to understand and reuse the data. If not, create additional documentation (e.g., a data dictionary)</li>
+</ul>
+<h2 id="key-ethical-considerations">Key Ethical Considerations</h2>
+<ul>
+<li>If working with human data, is this research done with and not on communities and populations involved?
+<ul>
+<li>Are there authoritative group representatives who should be contacted?</li>
+</ul>
+</li>
+<li>Are there labels or other descriptive indicators that could be applied to better represent or protect an identified group of people impacted by this dataset? (Example: <a href="https://localcontexts.org/labels/traditional-knowledge-labels/">TK labels</a>)</li>
+</ul>
+<h2 id="essential-tasks">Essential Tasks</h2>
+<h3 id="a-readme-file">A README file</h3>
+<p><a href="/C19dataset_READMEtemplate.txt">See here for a README template.</a></p>
+<p>Acceptable formats include <code>txt</code>, <code>rtf</code>, or <code>mdl</code>. For more information about READMEs, see <a href="https://data.research.cornell.edu/content/readme">Cornell University’s Guide to writing “readme” style metadata</a>.</p>
+<ul>
+<li>Include complete documentation about your dataset
+<ul>
+<li>Provenance Information</li>
+<li>Licensing Information</li>
+<li>Descriptions of Study Level and/or Data Level information:
+<ul>
+<li>Study-level data documentation:
+<ul>
+<li>Provenance of information gathered in this dataset</li>
+<li>Methods used to acquire, organize, or normalize this data</li>
+<li>Descriptions of any transformations that this data has undergone</li>
+</ul>
+</li>
+<li>Data-level documentation:
+<ul>
+<li>Contents of data files</li>
+<li>Definitions of all variables, labels, descriptions, units of measurement used in data files</li>
+<li>Defined labels or codes used to indicate missing data (ie no blank spaces, but what would indicate unknown or missing)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Include participant information and codebooks (if applicable)</li>
+<li>Check the accessibility of all files
+<ul>
+<li>Each file can be opened without proprietary software</li>
+<li>There are robust descriptions in plain text of data files and any images.</li>
+</ul>
+</li>
+</ul>
+<h3 id="file-and-folder-names">File and Folder Names</h3>
+<p>How are your files (and folders) named?</p>
+<ul>
+<li>Are names consistent?</li>
+<li>Are the names meaningful?</li>
+<li>Have you documented each of the file (and folder) names?</li>
+<li>Do the file and folder names reflect versioning? (i.e. updated files are named in a way that is findable without opening up the files themselves)</li>
+</ul>
+<h4 id="don-ts">Don’ts:</h4>
+<ul>
+<li>Use special characters in the file name</li>
+<li>Leave blank spaces in the file name</li>
+<li>Use different naming logics for each file or type of file</li>
+</ul>
+<h4 id="do-s">Do’s:</h4>
+<ul>
+<li>Use less than 25 characters per file name</li>
+<li>Use ISO 8601 to format dates: YYYY-MM-DD</li>
+<li>Use capitals or underscores instead of spaces or periods</li>
+<li>Write down your naming convention</li>
+</ul>
+
+  </article>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <a href="mailto:c19@princeton.edu">Email Us</a>
+        <span>C19 Data Collective &copy; 2023</span>
+      </div>
+    </footer>
+
+    <script defer src="/js/script.js"></script>
+    <script defer src="/js/search.js"></script></body>
+</html>
